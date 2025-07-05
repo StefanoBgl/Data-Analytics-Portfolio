@@ -4,10 +4,14 @@ This project analyzes a supermarket sales dataset to uncover **customer behavior
 
 The notebook combines **exploratory data analysis (EDA)** with **clustering techniques** to segment customers and guide data-driven decisions.
 
-<div style="display: flex; align-items: center; gap: 10px;">
-  <img src="image1_url" width="300"/>
-  <img src="image2_url" width="300"/>
-</div>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/a254f4e0-0d92-48c4-a78a-7eda000893da" width="500" height="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/83a292fd-43ee-4d37-84e0-94e805b0bae1" width="500" height="500"/></td>
+  </tr>
+</table>
+
+
 
 
 
