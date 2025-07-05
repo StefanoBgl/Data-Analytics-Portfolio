@@ -12,10 +12,21 @@ The notebook combines **exploratory data analysis (EDA)** with **clustering tech
 </table>
 
 
+## 🛠️ Technologies
+- Pandas  
+- Matplotlib  
+- Seaborn  
+- KMeans   
+- Clustering
 
+## 📈 Insights & Results
 
+- **Members in Naypyitaw** generate the highest revenue per visit
+- **Weekend afternoons** are the busiest hours – ideal for flash sales
+- **Ewallet users** spend more on average – may represent younger or more digital-savvy customers
+- Clustering reveals **clear behavioral groups** that can support customized offers, product placement, and loyalty programs
 
-## 🛠️ Workflow Overview
+## 🧱 Workflow Overview
 
 ### 1. Data Cleaning & Preparation
 - Parsed date and time columns, extracting new features like:
@@ -70,12 +81,7 @@ Clusters can be leveraged to guide **targeted promotions and business strategies
 
 
 
-## 📈 Key Insights
 
-- **Members in Naypyitaw** generate the highest revenue per visit
-- **Weekend afternoons** are the busiest hours – ideal for flash sales
-- **Ewallet users** spend more on average – may represent younger or more digital-savvy customers
-- Clustering reveals **clear behavioral groups** that can support customized offers, product placement, and loyalty programs
 
 
 
