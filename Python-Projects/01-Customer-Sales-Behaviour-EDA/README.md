@@ -79,7 +79,7 @@ Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-b
 ```bash
 📁 supermarket-sales-analysis/
 │
-├── 📓 Supermarket Sales & Customer Behaviour.ipynb
+├── 📓 Understanding_Customer_Behavior_through_Sales_Data.ipynb
 ├── 📄 README.md
 └── 📁 Data/
 
