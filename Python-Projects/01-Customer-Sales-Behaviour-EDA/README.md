@@ -13,10 +13,10 @@ The notebook combines **exploratory data analysis (EDA)** with **clustering tech
 
 
 ## 🛠️ Technologies
-- Pandas  
-- Matplotlib  
-- Seaborn  
-- KMeans Clustering
+- pandas  
+- matplotlib  
+- seaborn  
+- sklearn.cluster (KMeans)
 
 ## 📈 Insights & Results
 
