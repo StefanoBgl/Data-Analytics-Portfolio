@@ -11,12 +11,12 @@ This project explores household electricity consumption patterns using the **Glo
   </tr>
 </table>
 
-## 🛠️ Technologies
+## 🛠️ Libraries & Technologies
 - pandas
 - numpy
 - matplotlib
 - seaborn
-- seasonal decomposition
+- Seasonal decomposition
 - Augmented Dickey–Fuller test
 - Autocorrelation & Partial autocorrelation charts
 - ARIMA, SARIMA, Prophet
