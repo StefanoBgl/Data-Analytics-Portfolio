@@ -16,13 +16,12 @@ This project explores household electricity consumption patterns using the **Glo
 - numpy
 - matplotlib
 - seaborn
-- seasonal_decompose
-- adfuller
-- plot_acf, plot_pacf
-- ARIMA, SARIMAX
-- acorr_ljungbox, het_arch, jarque_bera
-- Prophet
-- mean_absolute_error, mean_squared_error, mean_absolute_percentage_error
+- seasonal decomposition
+- Augmented Dickey–Fuller test
+- Autocorrelation & Partial autocorrelation charts
+- ARIMA, SARIMA, Prophet
+- Heteroscedasticity, Ljung-Box, Jarque-Bera
+- MAE, RMSE, MAPE
 
 ## 📈 Insights & Results
 - **Prophet** forecasts future consumption effectively well, while **ARMA** and **SARIMA** show their best performance mainly on train data.
@@ -54,7 +53,7 @@ The notebook investigates average energy consumption across different time slice
 - **Seasonal**: **Winter** shows the highest average consumption.
 - **Yearly**: Consumption remains generally stable with expected seasonal peaks.
 
-A **2D heatmap** investigates the average consumption across multiple time-dimension: **Hour/Day of week**, **Year/Month**, **Time slot/Day of Week**.
+A **heatmap** investigates the average consumption across multiple time-dimension: **Hour/Day of week**, **Year/Month**, **Time slot/Day of Week**.
 
 
 ### 3. Time Series Decomposition
