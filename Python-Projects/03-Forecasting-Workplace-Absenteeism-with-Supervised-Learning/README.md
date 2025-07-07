@@ -1,4 +1,4 @@
-# 📊 Forecasting Workplace Absenteeism with Supervised Learning
+# 🧑‍💼  Forecasting Workplace Absenteeism with Supervised Learning
 
 This project analyzes employee absenteeism to uncover behavioral patterns and build predictive models that support workforce planning. Through data cleaning, exploratory analysis, and supervised learning, we aim to:
 
@@ -7,6 +7,7 @@ This project analyzes employee absenteeism to uncover behavioral patterns and bu
 - Classify the employee's absence against the overall median.
 - Compare linear and non-linear models to find the best predictive approach.
 
+![image](https://github.com/user-attachments/assets/b56d5e4c-9d3c-4a38-a49b-84c849e7b46e)
 
 ## 🗃️ Dataset Overview
 
@@ -70,7 +71,7 @@ The dataset contains detailed absenteeism records for employees, including:
   - `Social drinker`, `Son`, and `Reason for absence` showed predictive potential.
   - `Disciplinary failure` has no predictive power.
 
-#### 🧾 Feature Engineering
+#### ⚙️ Feature Engineering
 
 - Created binary indicators:
   - `IsMedicalReason`, `IsEducation_Degree`, `HasSon`, `IsDrinker`, `IsSmoker`, `HasPet`
@@ -82,33 +83,31 @@ The dataset contains detailed absenteeism records for employees, including:
 - Selected 7 features with |corr| > 0.07 for modeling: `Distance from work`, `Height`, `IsMedicalReason`, `HasSon`, `Age`, `IsDrinker`, `HasPet`.
 
 
-## 🤖 Regression Modeling (Log Target)
+### 3. Regression Modeling (Log Target)
 
-### 🔹 Linear Regression
+#### 🔹 Linear Regression
 
 - Used log-transformed target to reduce skew.
 - Model explained only **19% of variance (R² = 0.19)**.
 - Residual plots showed non-random structure and **underprediction** of high values.
 - The nature of the target variable significantly negatively affect the performance.
 
-### 🔸 Random Forest Regressor
+#### 🔸 Random Forest Regressor
 
 - Prediction performance is roughly equal.
 - **`IsMedicalReason`** was the most important feature by far.
-- Other features each contributed for 1% or less.
 
+### 4. Classification Modeling (Binary Target)
 
-## 🧭 Classification Modeling (Binary Target)
-
-### 🆕 Target
+#### 🎯 New Target
 
 - Created `Absenteism_Binary`: 1 if absence > median, else 0.
 - The class imbalance is tiny.
 
-### 📉 Correlation Analysis
+#### 📉 Correlation Analysis
 The feature selected with |corr| > 0.07 for modeling are: `Transportation expense`, `Service time`, `HitTarget`, `  IsMedicalReason`, `HasSon`, `IsDrinker`, `HasPet`.
 
-### 🔹 Logistic Regression
+#### 🔹 Logistic Regression
 
 - The classification was iterated over different threshold probabilities.
 - Best threshold for Accuracy (**0.72**) and F1 (**0.74**) is **P = 0.3**
@@ -120,16 +119,14 @@ The feature selected with |corr| > 0.07 for modeling are: `Transportation expens
   - Binned residuals show random distribution
 
 
-### 🔸 Random Forest Classifier
+#### 🔸 Random Forest Classifier
 
 - Trained with same features and grid search tuning.
 - Best threshold for Accuracy (**0.76**) and F1 (**0.76**) is **P = 0.5**
 - Best threshold for Recall (**0.96**).
 - Strongest features: `IsMedicalReason`, `HitTarget`, `Transportation expense`
 
-### Logistic vs Random Forest
-
-### 🔁 Score Comparison
+#### 🆚 Logistic vs Random Forest comparison
 
 | Metric      | Random Forest | Logistic Regression |
 |-------------|---------------|---------------------|
@@ -144,7 +141,17 @@ The feature selected with |corr| > 0.07 for modeling are: `Transportation expens
 - **Random Forest** offers best balance between metrics.
 - **Logistic** is slightly more interpretable and has higher recall.
 
----
+## 📬 Contact
+Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-baglio/) or reach out via email at s.baglio.personal@outlook.com.
 
-## 📁 Project Structure
+
+## 🗂️ Folder Structure
+
+```bash
+📁 supermarket-sales-analysis/
+│
+├── 📓 Forecasting_Workplace_Absenteeism_with_Supervised_Learning.ipynb
+├── 📄 README.md
+└── 📁 Data/
+
 
