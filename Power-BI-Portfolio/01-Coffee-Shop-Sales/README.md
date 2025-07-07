@@ -68,9 +68,9 @@ Contains all sales transaction data:
 - Sales, quantity, and unit price  
 
 ### 🔹 Dimension Tables
-- **`DIM_Product`**
-- **`DIM_Store`**
-- **`Calendar`**
+- DIM_Product
+- DIM_Store
+- Calendar
   
 ---
 
