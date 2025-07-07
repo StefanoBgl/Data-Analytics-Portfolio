@@ -9,6 +9,16 @@ Built on detailed employee records—including demographics, salary, job informa
 - **Workforce Overview** — Gender, ethnicity, age, salary, department, and job hierarchy insights  
 - **Retention Analysis** — Company-wide and segmented retention rates, demographic attrition patterns
 
+
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/bec950e9-67f7-495a-862f-614df97e7e04" width="500" height="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/3e54d10e-ba00-4445-a4e1-bc82a54a3e53" width="500" height="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/afed7dc5-35ac-4002-9835-559e66cedfa9" width="500" height="300"/></td>
+  </tr>
+</table>
+
 ---
 
 ## 🔎 Insights & Recommendations
@@ -105,5 +115,6 @@ Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-b
 │
 ├── 📄 README.md
 ├── 📁 pbip
-└── 📁 Data/
+├── 📁 Images
+└── 📁 Data
 
