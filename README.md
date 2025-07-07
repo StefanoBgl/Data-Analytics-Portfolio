@@ -1,4 +1,4 @@
-# 📦 Data-Analytics-Portfolio - Stefano Baglio
+# 📦 Data Analytics Portfolio - Stefano Baglio
 
 ### 📊 Introduction
 
