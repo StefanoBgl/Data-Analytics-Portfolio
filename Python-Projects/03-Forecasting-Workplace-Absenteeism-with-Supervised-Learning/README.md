@@ -146,7 +146,7 @@ Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-b
 ## 🗂️ Folder Structure
 
 ```bash
-📁 supermarket-sales-analysis/
+📁 03-Forecasting-Workplace-Absenteeism-with-Supervised-Learning/
 │
 ├── 📓 Forecasting_Workplace_Absenteeism_with_Supervised_Learning.ipynb
 ├── 📄 README.md
