@@ -1,0 +1,19 @@
+{
+  "name": "Custom",
+  "dataColors": [
+    "#2E4E77",
+    "#CFAD10",
+    "#2B2D42",
+    "#6B007B",
+    "#E044A7",
+    "#744EC2",
+    "#D9B300",
+    "#D64550"
+  ],
+  "textClasses": {
+    "callout": {
+      "fontFace": "'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+      "fontSize": 12
+    }
+  }
+}

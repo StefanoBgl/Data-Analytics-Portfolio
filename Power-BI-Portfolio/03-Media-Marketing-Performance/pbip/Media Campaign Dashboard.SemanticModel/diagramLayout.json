@@ -1,0 +1,138 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 382.55915862354067,
+            "y": 0
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "18e62d82-1b72-4dab-bf23-ae5d29bee3f6",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 699.998497542037,
+            "y": 298.677475870622
+          },
+          "nodeIndex": "Campaign",
+          "nodeLineageTag": "911a81e7-2e82-4a31-a5a7-d63edc64610e",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 65,
+            "y": 168
+          },
+          "nodeIndex": "Platform",
+          "nodeLineageTag": "3b6c06e8-4576-42f9-848b-79fa5c9cd214",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1036,
+            "y": 0
+          },
+          "nodeIndex": "Measure",
+          "nodeLineageTag": "e487e955-5b22-4965-8217-99d45d76d72c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 390,
+            "y": 437
+          },
+          "nodeIndex": "Metrics",
+          "nodeLineageTag": "4e442929-e479-4335-9c97-7c241267d820",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1378.2418930970334,
+            "y": 0
+          },
+          "nodeIndex": "Performance Metrics",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 1597.2418930970334,
+            "y": 346.72627390425151
+          },
+          "nodeIndex": "Selected Dimension",
+          "nodeLineageTag": "74717906-43e9-4725-8531-876b2f551cde",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1816.2418930970334,
+            "y": 292.5
+          },
+          "nodeIndex": "Decomposition Metric",
+          "nodeLineageTag": "3abfe0f1-46ba-41d2-bf91-4eafa501b083",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2035.2418930970334,
+            "y": 292.5
+          },
+          "nodeIndex": "KPI Metric",
+          "nodeLineageTag": "6a5765d9-2f6f-4929-8894-e85460d612d8",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 65.790774314115339,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

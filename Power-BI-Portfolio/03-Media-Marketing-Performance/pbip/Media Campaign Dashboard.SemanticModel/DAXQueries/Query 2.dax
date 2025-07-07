@@ -1,0 +1,4 @@
+EVALUATE
+    SUMMARIZECOLUMNS(
+        "C2", 'Measure'[C2]
+    )

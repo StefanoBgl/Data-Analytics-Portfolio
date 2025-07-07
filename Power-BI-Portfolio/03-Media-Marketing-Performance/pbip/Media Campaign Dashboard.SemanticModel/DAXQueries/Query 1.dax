@@ -1,0 +1,3 @@
+--  UNICHAR returns a character given the Unicode value
+--  UNICODE returns the Unicode value for a character
+--      The example uses UNICODE ( "━" ) = 9473

@@ -1,0 +1,4 @@
+EVALUATE
+    SUMMARIZECOLUMNS(
+        "Cost", 'Measure'[Cost]
+    )

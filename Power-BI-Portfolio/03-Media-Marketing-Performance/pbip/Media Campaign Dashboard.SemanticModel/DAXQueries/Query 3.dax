@@ -1,0 +1,12 @@
+DEFINE
+    MEASURE 'Measure'[C2] = VAR Months =
+    FILTER(
+        ALL('Calendar'[Month Year]),
+        'Calendar'[Month Year] <= MAX('Calendar'[Month Year])
+    )
+RETURN COUNTROWS(Months)
+
+EVALUATE
+    SUMMARIZECOLUMNS(
+        "C2", 'Measure'[C2]
+    )

@@ -1,0 +1,10 @@
+DEFINE
+    MEASURE 'Measure'[ROAS] = DIVIDE(
+    [Revenue],
+    [Cost]
+)
+
+EVALUATE
+    SUMMARIZECOLUMNS(
+        "ROAS", 'Measure'[ROAS]
+    )

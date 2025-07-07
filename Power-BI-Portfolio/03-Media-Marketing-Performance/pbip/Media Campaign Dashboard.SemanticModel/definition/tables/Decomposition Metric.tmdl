@@ -1,0 +1,52 @@
+table 'Decomposition Metric'
+	lineageTag: 3abfe0f1-46ba-41d2-bf91-4eafa501b083
+
+	column 'Decomposition Metric'
+		lineageTag: e29bfed3-dfc7-442e-9957-4b23aebcab7e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Decomposition Metric Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Decomposition Metric Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Decomposition Metric Fields'
+		isHidden
+		lineageTag: d67838ff-8240-42af-9c01-3817ccada035
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Decomposition Metric Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Decomposition Metric Order'
+		isHidden
+		formatString: 0
+		lineageTag: b32e7252-e928-4944-b28e-e6f4140f7b4b
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Decomposition Metric' = calculated
+		mode: import
+		source =
+				{
+				    ("Impressions", NAMEOF('Measure'[Total Impressions]), 0),
+				    ("Clicks", NAMEOF('Measure'[Total Clicks]), 1),
+				    ("Conversions", NAMEOF('Measure'[Total Conversion]), 2)
+				    // ("Impressions", NAMEOF('Measure'[Format Total Impressions]), 0),
+				    // ("Clicks", NAMEOF('Measure'[Format Total Clicks]), 1),
+				    // ("Conversions", NAMEOF('Measure'[Format Total Conversions]), 2)
+				}
+
+	annotation PBI_Id = ccd1e4a9c3b94e838b357a4bb129de39
+
