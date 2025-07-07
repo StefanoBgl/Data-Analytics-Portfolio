@@ -111,7 +111,7 @@ The feature selected with |corr| > 0.07 for modeling are: `Transportation expens
 
 - The classification was iterated over different threshold probabilities.
 - Best threshold for Accuracy (**0.72**) and F1 (**0.74**) is **P = 0.3**
-- Best threshold for Recall (**0.91**): **P = 0.2**
+- Best threshold for Recall (**0.91**): **P = 0.2**.
 - Key coefficients impact:
   - Positive: `IsMedicalReason`, `HasSon`, `IsDrinker`
   - Negative: `HasPet`, `HitTarget`
@@ -122,8 +122,8 @@ The feature selected with |corr| > 0.07 for modeling are: `Transportation expens
 #### 🔸 Random Forest Classifier
 
 - Trained with same features and grid search tuning.
-- Best threshold for Accuracy (**0.76**) and F1 (**0.76**) is **P = 0.5**
-- Best threshold for Recall (**0.96**).
+- Best threshold for Accuracy (**0.76**) and F1 (**0.76**) is **P = 0.5**.
+- Best threshold for Recall (**0.96**) is **P = 0.2**.
 - Strongest features: `IsMedicalReason`, `HitTarget`, `Transportation expense`
 
 #### 🆚 Logistic vs Random Forest comparison
