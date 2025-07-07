@@ -150,6 +150,6 @@ Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-b
 │
 ├── 📓 Forecasting_Workplace_Absenteeism_with_Supervised_Learning.ipynb
 ├── 📄 README.md
-└── 📁 Data/
+└── 📁 Data
 
 
