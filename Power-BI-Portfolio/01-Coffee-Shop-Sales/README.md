@@ -86,5 +86,6 @@ Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-b
 │
 ├── 📄 README.md
 ├── 📁 pbip
+├── 📁 Images
 └── 📁 Data/
 
