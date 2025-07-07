@@ -1,0 +1,34 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.144.1378.0 (25.06)+cba1e61f16ea36d44901f06fa446299040122394
+
+annotation PBI_QueryOrder = ["FACT_Employees","DIM_Date","Measure","DIM_Job Title","DIM_Gender","DIM_Age Group","DIM_City","DIM_Ehtnicity","DIM_Department","DIM_Business Unit","Icon Growth %"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table FACT_Employees
+ref table DIM_Date
+ref table Measure
+ref table 'DIM_Job Title'
+ref table DIM_Gender
+ref table 'DIM_Age Group'
+ref table DIM_City
+ref table DIM_Ehtnicity
+ref table DIM_Department
+ref table 'DIM_Business Unit'
+ref table 'Waffle Charts'
+ref table 'Area_Resource Level'
+ref table 'Date level'
+ref table ClusterMappingTable
+ref table 'Icon Growth %'
+
+ref cultureInfo en-US
+

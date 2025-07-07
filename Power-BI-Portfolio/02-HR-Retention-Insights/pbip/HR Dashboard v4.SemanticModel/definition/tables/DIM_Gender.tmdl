@@ -1,0 +1,44 @@
+table DIM_Gender
+	lineageTag: f3740a3e-6d22-41e0-9c73-d2e3acb54f63
+
+	column Gender
+		dataType: string
+		lineageTag: 218cc5f3-d2b2-4d4d-ad8f-18c0ac35c30a
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Job Title","TableItemName":"Job Title (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Index
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7a5086ae-d103-4286-a7c3-26f5d14a2519
+		summarizeBy: none
+		sourceColumn: Index
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_Gender = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\PBI Course - Anh Leimer\Project 2 - Linkedin Data Challenge\Dataset\HR Data Analysis_English.xlsx"), null, true),
+				    TBL_Employees_Table = Source{[Item="TBL_Employees",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(TBL_Employees_Table,{{"Employee ID", type text}, {"Full Name", type text}, {"Job Title", type text}, {"Department", type text}, {"Business Unit", type text}, {"Gender", type text}, {"Ethnicity", type text}, {"Age", Int64.Type}, {"Hire Date", type date}, {"Annual Salary", Int64.Type}, {"Bonus %", type number}, {"Country", type text}, {"City", type text}, {"Exit Date", type date}, {"Latitude", type number}, {"Longitude", type number}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Gender"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Index", 1, 1, Int64.Type)
+				in
+				    #"Added Index"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+	annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Job Title","TableItemName":"Job Title (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+

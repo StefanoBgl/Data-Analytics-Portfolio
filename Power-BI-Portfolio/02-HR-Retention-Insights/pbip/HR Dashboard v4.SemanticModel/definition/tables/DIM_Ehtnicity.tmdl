@@ -1,0 +1,40 @@
+table DIM_Ehtnicity
+	lineageTag: 3da911f8-7c4c-434e-80ff-e7e92a5cf6b2
+
+	column Ethnicity
+		dataType: string
+		lineageTag: 1daf3f56-8cff-464e-bca8-2f8a6b630dbb
+		summarizeBy: none
+		sourceColumn: Ethnicity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7c9ca8a3-285f-44ac-b756-e71521cd9ac1
+		summarizeBy: none
+		sourceColumn: Index
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_Ehtnicity = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\PBI Course - Anh Leimer\Project 2 - Linkedin Data Challenge\Dataset\HR Data Analysis_English.xlsx"), null, true),
+				    TBL_Employees_Table = Source{[Item="TBL_Employees",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(TBL_Employees_Table,{{"Employee ID", type text}, {"Full Name", type text}, {"Job Title", type text}, {"Department", type text}, {"Business Unit", type text}, {"Gender", type text}, {"Ethnicity", type text}, {"Age", Int64.Type}, {"Hire Date", type date}, {"Annual Salary", Int64.Type}, {"Bonus %", type number}, {"Country", type text}, {"City", type text}, {"Exit Date", type date}, {"Latitude", type number}, {"Longitude", type number}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Ethnicity"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Index", 1, 1, Int64.Type)
+				in
+				    #"Added Index"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

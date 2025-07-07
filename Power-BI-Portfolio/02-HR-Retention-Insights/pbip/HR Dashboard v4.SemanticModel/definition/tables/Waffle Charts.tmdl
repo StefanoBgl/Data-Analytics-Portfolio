@@ -1,0 +1,247 @@
+table 'Waffle Charts'
+	lineageTag: d0283c23-bcbb-4ef6-8c07-7d8153f10faa
+
+	measure 'Format Ethnicity' =
+			
+			VAR SumYX = SUM('Waffle Charts'[XY])
+			// VAR AllEthnicities =
+			//     CALCULATE(
+			//         [No. of Current Employees],
+			//         ALLSELECTED(DIM_Ehtnicity)
+			//     )
+			// VAR MeasureAsian =
+			//     CALCULATE(
+			//         [No. of Current Employees],
+			//         DIM_Ehtnicity[Ethnicity] = "Asian"
+			//     )
+			// // VAR MeasureBlack =
+			// //     CALCULATE(
+			// //         [No. of Current Employees],
+			// //         DIM_Ehtnicity[Ethnicity] = "Black"
+			// //     )
+			// VAR MeasureCaucasian =
+			//     CALCULATE(
+			//         [No. of Current Employees],
+			//         DIM_Ehtnicity[Ethnicity] = "Caucasian"
+			//     )
+			// VAR MeasureLatino =
+			//     CALCULATE(
+			//         [No. of Current Employees],
+			//         DIM_Ehtnicity[Ethnicity] = "Latino"
+			//     )
+			// VAR ResultPctAsian =
+			//     DIVIDE(
+			//         MeasureAsian,
+			//         AllEthnicities
+			//     )
+			// // VAR ResultPctBlack =
+			// //     DIVIDE(
+			// //         MeasureBlack,
+			// //         AllEthnicities
+			// //     )
+			// VAR ResultPctCaucasian =
+			//     DIVIDE(
+			//         MeasureCaucasian,
+			//         AllEthnicities
+			//     )
+			// VAR ResultPctLatino =
+			//     DIVIDE(
+			//         MeasureLatino,
+			//         AllEthnicities
+			//     )
+			// VAR AsianFormat = ROUND(ResultPctAsian*100,0)
+			// VAR CaucasianFormat = ROUND((ResultPctAsian + ResultPctCaucasian)*100,0)
+			// VAR LatinoFormat = ROUND((ResultPctAsian + ResultPctCaucasian + ResultPctLatino)*100,0)
+			VAR AsianFormat = [Current Employees % Asian]*100
+			VAR CaucasianFormat = ([Current Employees % Asian] + [Current Employees % Caucasian])*100
+			VAR LatinoFormat = ([Current Employees % Asian] + [Current Employees % Caucasian] + [Current Employees % Latino])*100
+			VAR FormatColor =
+			    SWITCH(
+			        TRUE(),
+			        SumYX <= AsianFormat, 1,
+			        SumYX <= CaucasianFormat, 2,
+			        SumYX <= LatinoFormat, 3,
+			        SumYX > LatinoFormat, 4
+			    )
+			RETURN
+			    FormatColor
+		formatString: 0
+		lineageTag: e5767b6e-8fab-4426-b45e-790175835ca5
+
+	measure 'Format Country' =
+			
+			VAR SumYX = SUM('Waffle Charts'[XY])
+			// VAR AllCountries =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         ALLSELECTED(DIM_City)
+			//     )
+			// VAR MeasureUSA =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         DIM_City[Country] = "United States"
+			//     )
+			// VAR MeasureChina =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         DIM_City[Country] = "China"
+			//     )
+			// VAR MeasureBrazil =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         DIM_City[Country] = "Brazil"
+			//     )
+			// VAR ResultPctUSA =
+			//     DIVIDE(
+			//         MeasureUSA,
+			//         AllCountries
+			//     )
+			// VAR ResultPctChina =
+			//     DIVIDE(
+			//         MeasureChina,
+			//         AllCountries
+			//     )
+			// VAR ResultPctBrazil =
+			//     DIVIDE(
+			//         MeasureBrazil,
+			//         AllCountries
+			//     )
+			// VAR USAFormat = ResultPctUSA*100
+			// VAR ChinaFormat = (ResultPctUSA + ResultPctChina)*100
+			// VAR BrazilFormat = (ResultPctUSA + ResultPctChina + ResultPctBrazil)*100
+			VAR USAFormat = [Current Employees % USA]*100
+			VAR ChinaFormat = ([Current Employees % USA] + [Current Employees % China])*100
+			VAR BrazilFormat = ([Current Employees % USA] + [Current Employees % China] + [Current Employees % Brazil])*100
+			VAR FormatColor =
+			    SWITCH(
+			        TRUE(),
+			        SumYX <= USAFormat, 1,
+			        SumYX <= ChinaFormat, 2,
+			        SumYX > ChinaFormat, 3
+			    )
+			RETURN
+			    FormatColor
+		formatString: 0
+		lineageTag: fbc7c858-dfae-4a48-bc51-9f24b04b3569
+
+	measure 'Format Age Group' =
+			
+			VAR SumYX = SUM('Waffle Charts'[XY])
+			// VAR AllGroups =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         ALLSELECTED('DIM_Age Group')
+			//     )
+			// VAR Measure_Less30 =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         'DIM_Age Group'[Age Group] = "<30"
+			//     )
+			
+			// VAR Measure_30_39 =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         'DIM_Age Group'[Age Group] = "30-39"
+			//     )
+			
+			// VAR Measure_40_49 =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         'DIM_Age Group'[Age Group] = "40-49"
+			//     )
+			
+			// VAR Measure_50_59 =
+			//     CALCULATE(
+			//         [Old_Working Employees],
+			//         'DIM_Age Group'[Age Group] = "50-59"
+			//     )
+			// VAR ResultPctLessThan30 =
+			//     DIVIDE(
+			//         Measure_Less30,
+			//         AllGroups
+			//     )
+			
+			// VAR ResultPct30_39 =
+			//     DIVIDE(
+			//         Measure_30_39,
+			//         AllGroups
+			//     )
+			
+			// VAR ResultPct40_49 =
+			//     DIVIDE(
+			//         Measure_40_49,
+			//         AllGroups
+			//     )
+			
+			// VAR ResultPct50_59 =
+			//     DIVIDE(
+			//         Measure_50_59,
+			//         AllGroups
+			//     )
+			
+			// VAR ResultPctGreaterThan60 =
+			//     DIVIDE(
+			//         Measure_Greater60,
+			//         AllGroups
+			//     )
+			
+			// VAR LessThan30 = ROUND(ResultPctLessThan30 * 100, 0)
+			// VAR ThirtyNine = ROUND((ResultPctLessThan30 + ResultPct30_39) * 100, 0)
+			// VAR FortyNine = ROUND((ResultPctLessThan30 + ResultPct30_39 + ResultPct40_49) * 100, 0)
+			// VAR FiftyNine = ROUND((ResultPctLessThan30 + ResultPct30_39 + ResultPct40_49 + ResultPct50_59) * 100, 0)
+			VAR LessThan30 = [Employees % <30] * 100
+			VAR ThirtyNine = ([Employees % <30] + [Employees % 30_39]) * 100
+			VAR FortyNine = ([Employees % <30] + [Employees % 30_39] + [Employees % 40_49]) * 100
+			VAR FiftyNine = ([Employees % <30] + [Employees % 30_39] + [Employees % 40_49] + [Employees % 50_59]) * 100
+			VAR FormatColor =
+			    SWITCH(
+			        TRUE(),
+			        SumYX <= LessThan30, 1,
+			        SumYX <= ThirtyNine, 2,
+			        SumYX <= FortyNine, 3,
+			        SumYX <= FiftyNine, 4,
+			        SumYX > FiftyNine, 5
+			    )
+			
+			RETURN
+			    FormatColor
+		formatString: 0
+		lineageTag: 14f9b605-4412-4080-81f3-3a48d3a60d2b
+
+	column X
+		formatString: 0
+		lineageTag: 878f6ffc-b1c8-4fef-82bd-4038ee49440e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [X]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Y
+		formatString: 0
+		lineageTag: 31710fd9-e95d-4070-be42-8756b852ed03
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Y]
+
+		annotation SummarizationSetBy = Automatic
+
+	column XY
+		formatString: 0
+		lineageTag: 9df41aef-5e00-4466-b162-f33b7ee01e54
+		summarizeBy: sum
+		sourceColumn: [yx]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Waffle Charts' = calculated
+		mode: import
+		source =
+				
+				VAR _x = SELECTCOLUMNS(GENERATESERIES(1,10),"X",[Value])
+				VAR _y = SELECTCOLUMNS(GENERATESERIES(0,9),"Y",[Value])
+				RETURN
+				    ADDCOLUMNS(GENERATE(_x,_y),"yx",[Y]*10+[X])
+
+	annotation PBI_Id = a8e5c44b159f4860b2c15e11bbe9cab9
+

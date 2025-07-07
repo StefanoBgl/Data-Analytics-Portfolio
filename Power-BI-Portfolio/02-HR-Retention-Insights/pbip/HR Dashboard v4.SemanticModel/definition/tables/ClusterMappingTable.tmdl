@@ -1,0 +1,75 @@
+table ClusterMappingTable
+	isHidden
+	isPrivate
+	lineageTag: d0d2e57b-37cf-42f5-afe8-3711261d3aeb
+
+	column Job_Title
+		lineageTag: f6da2d3d-8c53-4615-8e02-3498580f02a0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Job_Title]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Job Title","TableItemName":"Job Title (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column ClusterId
+		formatString: 0
+		lineageTag: f34e2ce1-b85d-4681-8c25-eeb8aea5a504
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: [ClusterId]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Job Title","TableItemName":"Job Title (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	partition ClusterMappingTable = calculated
+		mode: import
+		source = ```
+				VAR __DS0FilterTable = 
+					FILTER(
+						KEEPFILTERS(VALUES('DIM_Gender'[Gender])),
+						NOT('DIM_Gender'[Gender] IN {"Female"})
+					)
+				
+				VAR __DS0FilterTable2 = 
+					TREATAS({"'DIM_Job Title'[Job Title]"}, 'Area_Resource Level'[Fields])
+				
+				VAR __DS0FilterTable3 = 
+					FILTER(KEEPFILTERS(VALUES('DIM_Date'[Year])), 'DIM_Date'[Year] >= 2013)
+				
+				VAR __DS0Core = 
+					SUMMARIZECOLUMNS(
+						'DIM_Job Title'[Job Title],
+						__DS0FilterTable,
+						__DS0FilterTable2,
+						__DS0FilterTable3,
+						"Retention_Rate", 'Measure'[Retention Rate],
+						"Average_Annual_Salary", 'Measure'[Average Annual Salary]
+					)
+				
+				VAR __DataTransformT0 = 
+					KMeansClustering(
+						SELECTCOLUMNS(
+							__DS0Core,
+							"Job_Title", 'DIM_Job Title'[Job Title],
+							"Retention_Rate", [Retention_Rate],
+							"Average_Annual_Salary", [Average_Annual_Salary]
+						),
+						{("[Retention_Rate]", "Attribute"),
+							("[Average_Annual_Salary]", "Attribute"),
+							("[Job_Title]", "Item")},
+						{("[Job_Title]", BLANK()),
+							("ClusterId", "ClusterId")},
+						-1
+					)
+				
+				RETURN __DataTransformT0
+				```
+			retainDataTillForceCalculate
+
+	annotation ClusterMappingTable = true
+
+	annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Job Title","TableItemName":"Job Title (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+

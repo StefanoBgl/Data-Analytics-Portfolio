@@ -1,0 +1,49 @@
+table 'DIM_Age Group'
+	lineageTag: 9c604adc-5d80-4e18-a3a4-0a9cdba6e21c
+
+	column 'Age Group'
+		dataType: string
+		lineageTag: d35f4e77-b200-4bfe-8087-c363abfdabbe
+		summarizeBy: none
+		sourceColumn: Age Group
+		sortByColumn: 'Age Group Index'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Age Group Index'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6a630b60-8ce3-43ab-9c12-0847cd8469d5
+		summarizeBy: none
+		sourceColumn: Age Group Index
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM_Age Group' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\PBI Course - Anh Leimer\Project 2 - Linkedin Data Challenge\Dataset\HR Data Analysis_English.xlsx"), null, true),
+				    TBL_Employees_Table = Source{[Item="TBL_Employees",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(TBL_Employees_Table,{{"Employee ID", type text}, {"Full Name", type text}, {"Job Title", type text}, {"Department", type text}, {"Business Unit", type text}, {"Gender", type text}, {"Ethnicity", type text}, {"Age", Int64.Type}, {"Hire Date", type date}, {"Annual Salary", Int64.Type}, {"Bonus %", type number}, {"Country", type text}, {"City", type text}, {"Exit Date", type date}, {"Latitude", type number}, {"Longitude", type number}}),
+				    #"Added Age Group" = Table.AddColumn(#"Changed Type", "Age Group", each if [Age] < 30 then "<30" else if [Age] < 40 then "30-39" else if [Age] < 50 then "40-49" else if [Age] < 60 then "50-59" else ">60"),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Added Age Group",{"Age Group"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "Age Group Index", each if [Age Group] = "<30" then 1 else
+				if [Age Group] = "30-39" then 2 else
+				if [Age Group] = "40-49" then 3 else
+				if [Age Group] = "50-59" then 4 else
+				5),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Age Group Index", Int64.Type}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
