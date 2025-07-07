@@ -68,9 +68,9 @@ Contains all sales transaction data:
 - Sales, quantity, and unit price  
 
 ### 🔹 Dimension Tables
-- **`DIM_Product`**: Product names and categories  
-- **`DIM_Store`**: Store names and locations  
-- **`Calendar`**: Full date table with sorting, month/year fields
+- **`DIM_Product`**
+- **`DIM_Store`**
+- **`Calendar`**
   
 ---
 
@@ -82,7 +82,7 @@ Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-b
 ## 🗂️ Folder Structure
 
 ```bash
-📁 supermarket-sales-analysis/
+📁 01-Coffee-Shop-Sales/
 │
 ├── 📄 README.md
 ├── 📁 pbip
