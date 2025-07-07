@@ -35,8 +35,6 @@ The dataset contains detailed absenteeism records for employees, including:
 - Classification models are **more suitable** than regression for this data due to skew and discreteness.
 - **Random Forest Classifier** provides the most robust predictions.
 - `IsMedicalReason` is by far the most influential feature.
-- Social behaviors (`IsDrinker`, `HasSon`, `HasPet`) also contribute meaningfully.
-
 
 ## 🧱 Workflow overview
 
@@ -73,8 +71,7 @@ The dataset contains detailed absenteeism records for employees, including:
 
 #### ⚙️ Feature Engineering
 
-- Created binary indicators:
-  - `IsMedicalReason`, `IsEducation_Degree`, `HasSon`, `IsDrinker`, `IsSmoker`, `HasPet`
+- Created binary indicators: `IsMedicalReason`, `IsEducation_Degree`, `HasSon`, `IsDrinker`, `IsSmoker`, `HasPet`.
 - Removed redundant categorical columns.
 
 #### 📉 Correlation Analysis
@@ -90,12 +87,12 @@ The dataset contains detailed absenteeism records for employees, including:
 - Used log-transformed target to reduce skew.
 - Model explained only **19% of variance (R² = 0.19)**.
 - Residual plots showed non-random structure and **underprediction** of high values.
-- The nature of the target variable significantly negatively affect the performance.
+- The nature of the target variable significantly affect the performance.
 
 #### 🔸 Random Forest Regressor
 
-- Prediction performance is roughly equal.
-- **`IsMedicalReason`** was the most important feature by far.
+- Prediction performance is roughly equal to the linear model.
+- `IsMedicalReason` was the most important feature by far.
 
 ### 4. Classification Modeling (Binary Target)
 
@@ -110,8 +107,8 @@ The feature selected with |corr| > 0.07 for modeling are: `Transportation expens
 #### 🔹 Logistic Regression
 
 - The classification was iterated over different threshold probabilities.
-- Best threshold for Accuracy (**0.72**) and F1 (**0.74**) is **P = 0.3**
-- Best threshold for Recall (**0.91**): **P = 0.2**.
+- Best threshold for Accuracy (**0.72**) and F1 (**0.74**) is **p = 0.3**
+- Best threshold for Recall (**0.91**) is **p = 0.2**.
 - Key coefficients impact:
   - Positive: `IsMedicalReason`, `HasSon`, `IsDrinker`
   - Negative: `HasPet`, `HitTarget`
@@ -122,19 +119,20 @@ The feature selected with |corr| > 0.07 for modeling are: `Transportation expens
 #### 🔸 Random Forest Classifier
 
 - Trained with same features and grid search tuning.
-- Best threshold for Accuracy (**0.76**) and F1 (**0.76**) is **P = 0.5**.
-- Best threshold for Recall (**0.96**) is **P = 0.2**.
+- Best threshold for Accuracy (**0.76**) and F1 (**0.76**) is **p = 0.5**.
+- Best threshold for Recall (**0.96**) is **p = 0.2**.
 - Strongest features: `IsMedicalReason`, `HitTarget`, `Transportation expense`
 
 #### 🆚 Logistic vs Random Forest comparison
 
-| Metric      | Random Forest | Logistic Regression |
+Using the threshold probability (p) that yielded the highest F1-score, the resulting classification metrics are as follows:
+
+| Metric      | Random Forest (p = 0.5) | Logistic Regression (p = 0.3)|
 |-------------|---------------|---------------------|
 | F1 Score    |  0.76        | 0.74                |
 | Recall      | 0.78          | 0.82              |
 | Precision   |  0.74        | 0.67                |
 | Accuracy    |  0.76        | 0.72                |
-| P           |  0.5         | 0.3                  |
 | AUC         |  0.82        | 0.77                |
 
 - ROC curves show similar ability to distinguish classes.
