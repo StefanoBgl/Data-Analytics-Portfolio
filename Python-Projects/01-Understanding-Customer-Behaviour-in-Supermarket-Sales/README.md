@@ -91,7 +91,7 @@ Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-b
 ## 🗂️ Folder Structure
 
 ```bash
-📁 supermarket-sales-analysis/
+📁 01-Understanding-Customer-Behaviour-in-Supermarket-Sales/
 │
 ├── 📓 Understanding_Customer_Behavior_through_Sales_Data.ipynb
 ├── 📄 README.md
