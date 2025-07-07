@@ -96,10 +96,10 @@ Contains employee records with demographic and employment details:
 - Age
 
 ### 🔹 Dimension Tables
-- **`DIM_Department`**
-- **`DIM_Location`**
-- **`DIM_JobTitle`**
-- **`Calendar`**
+- DIM_Department
+- DIM_Location
+- DIM_JobTitle
+- Calendar
 
 ---
 
