@@ -1,8 +1,27 @@
-# 📦 Data-Analytics-Portfolio - Stefano Baglio
+# 📦 Data Analytics Portfolio - Stefano Baglio
 
 ### 📊 Introduction
 
-Welcome to my Data Analytics Portfolio, a curated collection of projects showcasing my work in Power BI and Python. This repository includes exploratory analyses, predictive models, and interactive dashboards—each designed to extract meaningful insights and support data-driven decision making.
+Welcome to my Data Analytics Portfolio, a curated collection of projects showcasing my work in Power BI and Python. This repository includes exploratory analyses, predictive models, and interactive dashboards, all designed to extract meaningful insights and support data-driven decision making.
+
+
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/366a8542-343e-4de9-874c-3c79905681a7" width="300" height="500"/></td>
+    <td><img src="https://github.com/user-attachments/assets/bc16c4ef-01d8-40e2-a245-de59e0aa845b" width="300" height="500"/></td>
+    <td><img src="https://github.com/user-attachments/assets/8f94b7fb-c62e-4886-9747-802f2fc5e3ec" width="300" height="500"/></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/b51eddba-d579-4f61-ad15-9dc682555c18" width="300" height="500"/></td>
+    <td><img src="https://github.com/user-attachments/assets/15ee7967-0c80-4f7d-8967-bdb8ee4d4930" width="300" height="500"/></td>
+    <td><img src="https://github.com/user-attachments/assets/c922ceb8-1daa-4d0a-88f5-eb4df6b1c602" width="300" height="500"/></td>
+  </tr>
+</table>
+
 
 ### 👤 About Me
 
