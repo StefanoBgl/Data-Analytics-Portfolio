@@ -1,0 +1,40 @@
+table 'DIM_Business Unit'
+	lineageTag: 55474957-b6cf-4a60-85c6-ae49a0dffb64
+
+	column 'Business Unit'
+		dataType: string
+		lineageTag: 2eb62be3-f169-425b-9ef6-54a61e83d384
+		summarizeBy: none
+		sourceColumn: Business Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1649ad25-8da8-49af-a5b8-a02bb2c73f66
+		summarizeBy: none
+		sourceColumn: Index
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM_Business Unit' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\PBI Course - Anh Leimer\Project 2 - Linkedin Data Challenge\Dataset\HR Data Analysis_English.xlsx"), null, true),
+				    TBL_Employees_Table = Source{[Item="TBL_Employees",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(TBL_Employees_Table,{{"Employee ID", type text}, {"Full Name", type text}, {"Job Title", type text}, {"Department", type text}, {"Business Unit", type text}, {"Gender", type text}, {"Ethnicity", type text}, {"Age", Int64.Type}, {"Hire Date", type date}, {"Annual Salary", Int64.Type}, {"Bonus %", type number}, {"Country", type text}, {"City", type text}, {"Exit Date", type date}, {"Latitude", type number}, {"Longitude", type number}}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Changed Type",{"Business Unit"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Index", 1, 1, Int64.Type)
+				in
+				    #"Added Index"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

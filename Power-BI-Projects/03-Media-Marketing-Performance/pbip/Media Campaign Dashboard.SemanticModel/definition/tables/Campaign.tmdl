@@ -1,0 +1,43 @@
+table Campaign
+	lineageTag: 911a81e7-2e82-4a31-a5a7-d63edc64610e
+
+	column Campaign
+		dataType: string
+		lineageTag: e70f7df7-d41b-47ff-9c9f-b2a13a713f4a
+		summarizeBy: none
+		sourceColumn: Campaign
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 34acda07-f505-4628-8641-fd96f598b267
+		summarizeBy: none
+		sourceColumn: Index
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Campaign = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("D:\PBI Course - Anh Leimer\Project 3\Dataset Media Ad\Media Campaign.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Day of Week", type text}, {"Campaign Name", type text}, {"Platform", type text}, {"Impressions", Int64.Type}, {"Clicks", Int64.Type}, {"Cost", type number}, {"Conversions", Int64.Type}, {"Revenue", type number}}),
+				    #"Removed Day Of Week" = Table.RemoveColumns(#"Changed Type",{"Day of Week"}),
+				    #"Removed Other Columns" = Table.SelectColumns(#"Removed Day Of Week",{"Campaign Name"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Index" = Table.AddIndexColumn(#"Removed Duplicates", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"Campaign Name", "Campaign"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

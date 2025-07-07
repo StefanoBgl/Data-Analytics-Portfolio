@@ -1,0 +1,243 @@
+table Calendar
+	lineageTag: 18e62d82-1b72-4dab-bf23-ae5d29bee3f6
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8533d7b7-aaa0-462b-aa6c-4182aa484291
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 017a6684-a3e5-4221-84bd-173aad45979c
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: int64
+		formatString: 0
+		lineageTag: a1fa6e57-b0fd-4c39-8d0d-2f06e0b5c2a3
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quarter Year'
+		dataType: string
+		lineageTag: 274042ff-3ac4-4a27-8e61-dd8defb98e47
+		summarizeBy: none
+		sourceColumn: Quarter Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: int64
+		formatString: 0
+		lineageTag: b330a263-79a8-4c2a-a9db-cd7065baaa68
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Name'
+		dataType: string
+		lineageTag: c30612ce-e632-47dd-8eee-22f791c08926
+		summarizeBy: none
+		sourceColumn: Month Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year'
+		dataType: string
+		lineageTag: 9f45040e-9c56-4ab2-b52b-8ad3f361635c
+		summarizeBy: none
+		sourceColumn: Month Year
+		sortByColumn: 'Month Year S'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year S'
+		dataType: int64
+		formatString: 0
+		lineageTag: 67791146-0039-4a42-88a1-1a57a15d525c
+		summarizeBy: none
+		sourceColumn: Month Year S
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End of Month'
+		dataType: string
+		lineageTag: dbe28b43-75c2-4dc1-882c-2c7aeef52394
+		summarizeBy: none
+		sourceColumn: End of Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Day'
+		dataType: string
+		lineageTag: 3695244d-6b62-428b-92c5-fb0908e9109f
+		summarizeBy: none
+		sourceColumn: Week Day
+		sortByColumn: 'Day of Week'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Day of Week'
+		dataType: int64
+		formatString: 0
+		lineageTag: 532b7d86-dc53-42d4-b90b-3bbe80121d3b
+		summarizeBy: none
+		sourceColumn: Day of Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		dataType: int64
+		formatString: 0
+		lineageTag: 49a8e94c-65d2-4aa4-a43b-fd3063ab6945
+		summarizeBy: none
+		sourceColumn: Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: 053c7d9d-5b07-40f3-808d-7e074dcf02dd
+		summarizeBy: none
+		sourceColumn: Week of Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week
+		dataType: string
+		lineageTag: 0877c3fb-ee70-4190-bf75-fd9063d556f4
+		summarizeBy: none
+		sourceColumn: Week
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: fc4fe622-0c15-4858-a1b4-ffb15f11c105
+		summarizeBy: none
+		sourceColumn: Week of Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week of Year W'
+		dataType: string
+		lineageTag: a602be9b-6496-4866-9939-9d7fb839d8f5
+		summarizeBy: none
+		sourceColumn: Week of Year W
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		dataType: int64
+		formatString: 0
+		lineageTag: e98b7163-d03c-4aea-a0c1-47faa333a5b7
+		summarizeBy: none
+		sourceColumn: Fiscal Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e471485-9b2e-482d-b6ad-2e62e5abfeea
+		summarizeBy: none
+		sourceColumn: Fiscal Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		dataType: int64
+		formatString: 0
+		lineageTag: f31d499c-4ce0-4ae5-a838-ef31958a81ad
+		summarizeBy: none
+		sourceColumn: Fiscal Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Week Day Short' = FORMAT('Calendar'[Date], "DDD")
+		lineageTag: 2aaf9c80-d7de-4a45-b6f7-a5bf75715339
+		summarizeBy: none
+		sortByColumn: dOw2
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column dOw2 = ```
+			
+			IF(
+			    'Calendar'[Week Day] = "Sunday", 7,
+			    'Calendar'[Day of Week]
+			)
+			
+			
+			```
+		formatString: 0
+		lineageTag: 3d15581b-f74d-4a46-bd32-f2bb39360660
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = m
+		mode: import
+		source = ```
+				let
+				    Source = let 
+				// Create parameter 
+				    StartDate = List.Min(Metrics[Date]),
+				    EndDate = List.Max(Metrics[Date]),
+				    Step = Duration.Days(EndDate - StartDate)+1, 
+				// Create the List of date
+				    Source = List.Dates(StartDate,Step, #duration(1,0,0,0)), 
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Converted to Table",{{"Column1", type date}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Date"}}),
+				// Create additional columns 
+				    #"Inserted Year" = Table.AddColumn(#"Renamed Columns", "Year", each Date.Year([Date]), Int64.Type),
+				    #"Inserted Quarter" = Table.AddColumn(#"Inserted Year", "Quarter", each Date.QuarterOfYear([Date]), Int64.Type),
+				    #"Inserted Quarter Year" = Table.AddColumn(#"Inserted Quarter", "Quarter Year", each Text.Combine({"Q", Text.From([Quarter], "en-US"), " ", Text.From([Year], "en-US")}), type text), 
+				    #"Inserted Month" = Table.AddColumn(#"Inserted Quarter Year", "Month", each Date.Month([Date]), Int64.Type),
+				    #"Inserted Month Name" = Table.AddColumn(#"Inserted Month", "Month Name", each Text.Start(Date.MonthName([Date]),3), type text),
+				    #"Inserted Month Year" = Table.AddColumn(#"Inserted Month Name", "Month Year", each Text.Combine({[Month Name], " ", Text.From([Year], "en-US")}), type text),
+				    #"Inserted Month Year S" = Table.AddColumn(#"Inserted Month Year", "Month Year S", each Text.Combine({Text.From([Year], "en-US"), Text.PadStart(Text.From([Month], "en-US"), 2, "0")}), type text),
+				    #"Inserted End of Month" = Table.AddColumn(#"Inserted Month Year S", "End of Month", each Date.EndOfMonth([Date])),
+				    #"Inserted Week Day Name" = Table.AddColumn(#"Inserted End of Month", "Week Day", each Date.DayOfWeekName([Date])),
+				    #"Inserted Day of Week" = Table.AddColumn(#"Inserted Week Day Name", "Day of Week", each Date.DayOfWeek([Date]), Int64.Type),
+				    #"Inserted Day" = Table.AddColumn(#"Inserted Day of Week", "Day", each Date.Day([Date]), Int64.Type),
+				    #"Inserted Week of Month" = Table.AddColumn(#"Inserted Day", "Week of Month", each Date.WeekOfMonth([Date]), Int64.Type),
+				    #"Inserted Week of Month W" = Table.AddColumn(#"Inserted Week of Month", "Week", each Text.Combine({"W", Text.From([Week of Month], "en-US")}), type text),
+				    #"Inserted Week of Year" = Table.AddColumn(#"Inserted Week of Month W", "Week of Year", each Date.WeekOfYear([Date]), Int64.Type),
+				    #"Inserted Week of Year W" = Table.AddColumn(#"Inserted Week of Year", "Week of Year W", each Text.Combine({"W", Text.From([Week of Year], "en-US")}), type text),
+				    #"Added Fiscal Month" = Table.AddColumn(#"Inserted Week of Year W", "Fiscal Month", each if Date.Month([Date]) <= 3 then Date.Month([Date]) + 9 else Date.Month([Date]) - 3),
+				    #"Added Fiscal Year" = Table.AddColumn(#"Added Fiscal Month", "Fiscal Year", each if Date.Month([Date]) <= 3 then Date.Year([Date]) else Date.Year([Date]) + 1),
+				    #"Added Fiscal Quarter" = Table.AddColumn(#"Added Fiscal Year", "Fiscal Quarter", each Number.RoundUp([Fiscal Month]/3))
+				in
+				    #"Added Fiscal Quarter",
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Month Year S", Int64.Type}, {"Fiscal Month", Int64.Type}, {"Fiscal Year", Int64.Type}, {"Fiscal Quarter", Int64.Type}})
+				in
+				    #"Changed Type"
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

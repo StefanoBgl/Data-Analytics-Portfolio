@@ -1,0 +1,320 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1704,
+            "y": 0
+          },
+          "nodeIndex": "DIM_Date",
+          "nodeLineageTag": "eb9738cb-1a1a-4274-8675-697580196dec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2016,
+            "y": 251
+          },
+          "nodeIndex": "FACT_Employees",
+          "nodeLineageTag": "86ddd664-ba3c-4b7c-ad37-855db541bb2e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2060,
+            "y": 0
+          },
+          "nodeIndex": "Measure",
+          "nodeLineageTag": "4378b528-876e-4c62-9445-64f655f8ad9c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2424,
+            "y": 246.5
+          },
+          "nodeIndex": "DIM_Job Title",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 211.5
+          },
+          "nodeIndex": "DIM_Age Group",
+          "nodeLineageTag": "9c604adc-5d80-4e18-a3a4-0a9cdba6e21c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 211.5
+          },
+          "nodeIndex": "DIM_Business Unit",
+          "nodeLineageTag": "55474957-b6cf-4a60-85c6-ae49a0dffb64",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 199.5
+          },
+          "nodeIndex": "DIM_City",
+          "nodeLineageTag": "b02662e1-c49e-4ecd-8ce1-7a1c24b011f0",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 211.5
+          },
+          "nodeIndex": "DIM_Department",
+          "nodeLineageTag": "62641950-b9cf-4830-bc3e-b3e412421181",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1136,
+            "y": 211.5
+          },
+          "nodeIndex": "DIM_Ehtnicity",
+          "nodeLineageTag": "3da911f8-7c4c-434e-80ff-e7e92a5cf6b2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1420,
+            "y": 211.5
+          },
+          "nodeIndex": "DIM_Gender",
+          "nodeLineageTag": "f3740a3e-6d22-41e0-9c73-d2e3acb54f63",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Waffle Charts",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Date level",
+          "nodeLineageTag": "680a1e86-527d-4fd9-ae97-9d1790fb9961",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Area_Resource Level",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Icon Growth %",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 42.022792022792018,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 1,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 494.7060763609785,
+            "y": 445.3704243092302
+          },
+          "nodeIndex": "FACT_Employees",
+          "nodeLineageTag": "86ddd664-ba3c-4b7c-ad37-855db541bb2e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 491.0071855377048,
+            "y": 893.21906685212048
+          },
+          "nodeIndex": "DIM_Age Group",
+          "nodeLineageTag": "9c604adc-5d80-4e18-a3a4-0a9cdba6e21c",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 873.45422525900733,
+            "y": 511.77472882504833
+          },
+          "nodeIndex": "DIM_Business Unit",
+          "nodeLineageTag": "55474957-b6cf-4a60-85c6-ae49a0dffb64",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 128.81045385321147,
+            "y": 173.75
+          },
+          "nodeIndex": "DIM_City",
+          "nodeLineageTag": "b02662e1-c49e-4ecd-8ce1-7a1c24b011f0",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 513.95435681485378,
+            "y": 0
+          },
+          "nodeIndex": "DIM_Date",
+          "nodeLineageTag": "eb9738cb-1a1a-4274-8675-697580196dec",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 877.27878002828038,
+            "y": 305.28545645446263
+          },
+          "nodeIndex": "DIM_Department",
+          "nodeLineageTag": "62641950-b9cf-4830-bc3e-b3e412421181",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 55.282219308072058,
+            "y": 657.23324614548255
+          },
+          "nodeIndex": "DIM_Ehtnicity",
+          "nodeLineageTag": "3da911f8-7c4c-434e-80ff-e7e92a5cf6b2",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 12.5,
+            "y": 422.73178570014693
+          },
+          "nodeIndex": "DIM_Gender",
+          "nodeLineageTag": "f3740a3e-6d22-41e0-9c73-d2e3acb54f63",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 873.89796831150943,
+            "y": 698.36947381486073
+          },
+          "nodeIndex": "DIM_Job Title",
+          "nodeLineageTag": "905b894d-c0bc-491a-b9bc-c0d1c9dfb88e",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 8
+        }
+      ],
+      "name": "Layout 1",
+      "zoomValue": 55.599173134922388,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Layout 1",
+  "defaultDiagram": "All tables"
+}

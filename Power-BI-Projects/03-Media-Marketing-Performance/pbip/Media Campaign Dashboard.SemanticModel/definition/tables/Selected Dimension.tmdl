@@ -1,0 +1,48 @@
+table 'Selected Dimension'
+	lineageTag: 74717906-43e9-4725-8531-876b2f551cde
+
+	column 'Selected Dimension'
+		lineageTag: d3b81cab-ad9c-4ef4-8350-9eb3e252a45c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Selected Dimension Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Selected Dimension Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selected Dimension Fields'
+		isHidden
+		lineageTag: 1c6072d5-e020-4d86-b1ae-abe0043e3056
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Selected Dimension Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Selected Dimension Order'
+		isHidden
+		formatString: 0
+		lineageTag: 55ebd791-f7c7-4f66-89bd-1696dbc598df
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Selected Dimension' = calculated
+		mode: import
+		source =
+				{
+				    ("Campaign", NAMEOF('Campaign'[Campaign]), 0),
+				    ("Platform", NAMEOF('Platform'[Platform]), 1)
+				}
+
+	annotation PBI_Id = 9fd9f51e7a4c4f41895c82d86bacd2b0
+

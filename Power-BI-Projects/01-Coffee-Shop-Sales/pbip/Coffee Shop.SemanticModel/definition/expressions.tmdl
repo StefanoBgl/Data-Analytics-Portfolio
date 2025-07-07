@@ -1,0 +1,58 @@
+expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdentifier=#"Sample File", Type="Binary", IsParameterQueryRequired=true]
+	lineageTag: e80400e5-5f38-4803-bdf5-5a40e0f9b8fc
+	queryGroup: 'Transform File from Transaction\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform Sample File' =
+		let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+	lineageTag: 067ff6e2-cd74-4048-ab1f-b027b4a0e112
+	queryGroup: 'Transform File from Transaction'
+
+	annotation PBI_ResultType = Table
+
+expression 'Sample File' =
+		let
+		    Source = Folder.Files("D:\PBI Course - Anh Leimer\1. Dataset\Transaction"),
+		    Navigation1 = Source{0}[Content]
+		in
+		    Navigation1
+	lineageTag: d69420e3-eb4c-425e-a921-9b776ff96fae
+	queryGroup: 'Transform File from Transaction\Helper Queries'
+
+	annotation PBI_ResultType = Binary
+
+expression 'Transform File' =
+		let
+		    Source = (Parameter1 as binary) => let
+		    Source = Excel.Workbook(Parameter1, null, true),
+		    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+		    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true])
+		in
+		    #"Promoted Headers"
+		in
+		    Source
+	mAttributes: [ FunctionQueryBinding = "{""exemplarFormulaName"":""Transform Sample File""}" ]
+	lineageTag: efb33d3c-ea35-4631-a780-e829516c2481
+	queryGroup: 'Transform File from Transaction\Helper Queries'
+
+	annotation PBI_ResultType = Function
+
+expression 'Cluster Slicer' =
+		let
+		    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCskvUAhOzEktVorViVYKzy8qLoHxYwE=", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Cluster = _t]),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Cluster", type text}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Cluster"})
+		in
+		    #"Removed Columns"
+	lineageTag: 2955da78-79af-4984-ba00-5c239fa6ee5e
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

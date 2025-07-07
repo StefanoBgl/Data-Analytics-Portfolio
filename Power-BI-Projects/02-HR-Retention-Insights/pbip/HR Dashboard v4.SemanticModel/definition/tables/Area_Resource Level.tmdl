@@ -1,0 +1,54 @@
+table 'Area_Resource Level'
+	lineageTag: 3cac774d-02aa-40d6-a5ec-01ff8140a3d4
+
+	column 'Area_Resource Level'
+		lineageTag: 15aa4b2a-d256-4938-b3bb-a5918436b41d
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: Order
+
+		relatedColumnDetails
+			groupByColumn: Fields
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fields
+		isHidden
+		lineageTag: 961611e7-5157-480c-818d-60a344e11427
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: Order
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Job Title","TableItemName":"Job Title (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column Order
+		isHidden
+		formatString: 0
+		lineageTag: 5d716f6e-5457-47be-9f41-bdc1f3ae3f09
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Area_Resource Level' = calculated
+		mode: import
+		source =
+				{
+				    ("Business Unit", NAMEOF('DIM_Business Unit'[Business Unit]), 0),
+				    ("Department", NAMEOF('DIM_Department'[Department]), 1),
+				    ("Job Level", NAMEOF('DIM_Job Title'[Job Level]), 2),
+				    ("Job Title", NAMEOF('DIM_Job Title'[Job Title]), 3)
+				}
+
+	annotation PBI_Id = 536baa5cdd994b669ddcd84ee9e3ce30
+
+	annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Job Title","TableItemName":"Job Title (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
