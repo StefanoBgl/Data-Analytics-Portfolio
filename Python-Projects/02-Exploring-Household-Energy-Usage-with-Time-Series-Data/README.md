@@ -108,7 +108,7 @@ Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-b
 ## 🗂️ Folder Structure
 
 ```bash
-📁 supermarket-sales-analysis/
+📁 02-Exploring-Household-Energy-Usage-with-Time-Series-Data/
 │
 ├── 📓 Exploring_Household_Energy_Usage_with_Time_Series_Data.ipynb
 ├── 📄 README.md
