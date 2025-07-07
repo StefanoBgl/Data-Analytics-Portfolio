@@ -1,0 +1,26 @@
+ADDCOLUMNS(
+    ADDCOLUMNS(
+        ALLSELECTED(DIM_Product[Product]),
+        "Sales", [Total Sales],
+        "BestRankSales", RANKX(
+                        ALLSELECTED(DIM_Product[Product]),
+                        [Total Sales],
+                        ,
+                        DESC,
+                        Dense
+        ),
+        "WorstRankSales", RANKX(
+                        ALLSELECTED(DIM_Product[Product]),
+                        [Total Sales],
+                        ,
+                        ASC,
+                        Dense
+        )
+    ),
+    "Slicer Index", SWITCH(
+                    TRUE(),
+                    [BestRankSales] <= 5, 1,
+                    [WorstRankSales] <= 5, 0,
+                    BLANK()
+    )
+)

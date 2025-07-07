@@ -1,0 +1,200 @@
+table Measure
+	lineageTag: de0bb51e-53cc-45cb-b11d-38ccdb80560f
+
+	measure 'Total Sales' = SUM(FACT_Transaction[Sales])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales
+		lineageTag: 4738e82c-8f0a-4d34-b5b7-c36cc3294e7b
+
+	measure 'Total Transaction QTY' = SUM(FACT_Transaction[Transaction Qty])
+		formatString: #,0
+		displayFolder: Qty
+		lineageTag: d4805cb3-17ad-4062-8b89-85687df4008c
+
+	measure 'Avg Unit Price' = AVERAGE(FACT_Transaction[Unit Price])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 06512712-2f3a-4923-afe0-9bcb101a5e65
+
+	measure 'Sales Coffee Beans' =
+			
+			CALCULATE(
+			    [Total Sales],
+			    DIM_Product[Product Category] = "Coffee beans"
+			)
+		displayFolder: Sales
+		lineageTag: 28cc6f6d-337c-4ee8-80ae-dc1cc23868d1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Month Sales' = ```
+			
+			AVERAGEX(
+			    ALLSELECTED('Calendar'[Month Name], 'Calendar'[Month Year S]),
+			    [Total Sales]
+			)
+			
+			```
+		displayFolder: Sales
+		lineageTag: c8af4e58-251a-4f9d-bdc4-6c4208c8b8d4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Color for Month Sales' = ```
+			
+			VAR AverageMonthSales = 
+			    AVERAGEX(
+			        ALLSELECTED('Calendar'[Month Name], 'Calendar'[Month Year S]),
+			        [Total Sales]
+			    )
+			VAR FormatColor =
+			    IF(
+			        [Total Sales] >= AverageMonthSales, 
+			        "#7F5539",
+			        --"#e6ccb2"
+			        "#dcc9b6"
+			    )
+			RETURN
+			    FormatColor
+			```
+		displayFolder: Sales
+		lineageTag: 3edbe424-221c-4877-9960-77f98dc64c83
+
+	measure '% Sales Change' =
+			
+			VAR PreviousMonthSales =
+			    CALCULATE(
+			        [Total Sales],
+			        DATEADD(
+			            'Calendar'[Date],
+			            -1,
+			            MONTH
+			        )
+			    )
+			VAR PctChange =
+			    IF(
+			        ISBLANK(PreviousMonthSales),
+			        BLANK(),
+			            DIVIDE(
+			                [Total Sales],
+			                PreviousMonthSales
+			            ) - 1
+			        )
+			    // SWITCH(
+			    //     TRUE(),
+			    //     ISBLANK(PreviousMonthSales), BLANK(),
+			    //     PreviousMonthSales = [Total Sales], BLANK(),
+			    //     DIVIDE(
+			    //             [Total Sales],
+			    //             PreviousMonthSales
+			    //         ) - 1
+			    //     )
+			RETURN
+			    PctChange
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Sales
+		lineageTag: 1ab2fe9d-8295-4eb7-b8be-91a0cc430b41
+
+	measure '% Sales Change Format' =
+			
+			IF(
+			    [Total Sales Previous Month] = [Total Sales],
+			    "0%",
+			    FORMAT(
+			        [% Sales Change],
+			        "+0.0%;-0.0%"
+			    )
+			)
+		displayFolder: Sales
+		lineageTag: 9dd722d3-041f-421c-87b5-ff3754abdff2
+
+	measure 'Total Number of Transactions' = COUNTROWS(FACT_Transaction)
+		formatString: #,0
+		lineageTag: 18ae3939-ce86-44f8-aa1a-872d457bf624
+
+	measure 'Color for Category Sales' =
+			
+			VAR AvgCategorySales =
+			    AVERAGEX(
+			        ALLSELECTED(DIM_Product[Product Category]),
+			        [Total Sales]
+			    )
+			VAR FormatColor =
+			    IF(
+			        [Total Sales] > AvgCategorySales,
+			       "#7F5539",
+			        --"#E6CCB2"
+			        --"#ede0d4"
+			        "#dcc9b6"
+			    )
+			RETURN
+			    FormatColor
+		displayFolder: Sales
+		lineageTag: d5276f03-a097-4503-b8c1-f98d8c696ec8
+
+	measure 'Average Transaction QTY' = AVERAGE(FACT_Transaction[Transaction Qty])
+		displayFolder: Qty
+		lineageTag: 0ae943bd-cdfe-40a6-be94-c1b022ea5e82
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Sales Previous Month' =
+			
+			VAR TopProducts =
+			    TOPN(
+			        [TopNValue],
+			        ALLSELECTED(DIM_Product[Product]),
+			        [Total Sales],
+			        DESC
+			    )
+			VAR TopSales =
+			    CALCULATE(
+			        [Total Sales],
+			        FILTER(
+			            DIM_Product,
+			            DIM_Product[Product] in TopProducts
+			        ),
+			        DATEADD('Calendar'[Date], -1, MONTH)
+			    )
+			RETURN
+			    TopSales
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Sales
+		lineageTag: 1d9beb67-cc25-4902-a7ca-24301b2f2f23
+
+	measure TopNValue = 5
+		formatString: 0
+		displayFolder: Sales
+		lineageTag: a6bfc120-a9e7-498b-a651-1690763a9c9e
+
+	measure TotalSalesBlank = 1000
+		formatString: 0
+		displayFolder: Sales
+		lineageTag: 74a77d91-1fad-436c-8946-c2ac009f99d4
+
+	measure 'Title Calendar' = "When Do Customers make the Most Purchases?"
+		lineageTag: 40c69e25-fddf-4fec-9b92-60eb3e1a1804
+
+	measure 'Total Transaction Label' = "Total Transactions"
+		lineageTag: c13b069c-bca5-497c-a793-05c3bee7f5bf
+
+	measure 'Avg Qty * Price' =
+			
+			[Avg Unit Price] * [Average Transaction QTY]
+		lineageTag: c72e1932-0f9c-43b7-9d17-7c13ba45eae9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Measure = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
