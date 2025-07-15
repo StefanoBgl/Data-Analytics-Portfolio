@@ -102,7 +102,7 @@ This report follows a star schema with a central fact table and connected dimens
 
 ## 📦 Data Source
 
-This is a **synthetic dataset** curated for educational and portfolio purposes. It does not contain any real or confidential employee data.
+This is a synthetic dataset curated for educational and portfolio purposes. It does not contain any real or confidential employee data.
 
 ## 🧰 Tools & Technologies Used
 
