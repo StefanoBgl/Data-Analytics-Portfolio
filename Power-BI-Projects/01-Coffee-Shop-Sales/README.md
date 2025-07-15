@@ -42,42 +42,52 @@ The **Coffee Shop Dashboard** is an interactive Power BI report that provides a 
 
 ## 🛠️ Analytical Techniques & Visual Highlights
 
-The report employs a variety of interactive and visually engaging techniques to uncover patterns and drive insights:
-
 ### 📈 Time Series & Trend Analysis
-- **Sales, Quantity, and Transactions Trend**: Line charts display performance progression over time.  
-- **Time Intelligence for Monthly Comparisons**: Measures like % Sales Change allow comparison with the previous month.  
-- **Monthly Sales vs Average**: Bar charts highlight seasonal peaks and drops against the average.
+- Sales, Quantity, and Transactions Trend
+- Time Intelligence for Monthly Comparisons (% Change vs. Previous Month)
+- Monthly Sales vs Average
 
 ### 📊 Category & Product Performance
-- **Product Category Sales vs Average**: Highlights over- or under-performing categories.  
-- **Individual Product Performance**: Identifies rising or declining products.  
-- **Top 5 vs Bottom 5 Products**: DAX-powered slicers allow segmented views.
+- Product Category Sales vs Average
+- Individual Product Performance
+- Top 5 vs Bottom 5 Products (DAX-powered slicers)
 
 ### 🧠 Behavioral Insights
-- **Calendar-Based Sales View**: Visualizes daily sales patterns.  
-- **Heatmap of Day & Time**: Reveals peak hours across weekdays.  
-- **Correlation Between Transaction Quantity and Unit Price**: Explores pricing impact on customer behavior.
+- Calendar-Based Sales View
+- Heatmap of Day & Time
+- Correlation Between Transaction Quantity and Unit Price
 
 ## 🧩 Data Model Overview
 
-The report uses a clean and optimized **star schema**, connecting a central fact table to supporting dimension tables for rich filtering and scalable performance. All relationships are one-to-many from dimensions to the fact table, forming a robust analytical model.
+The report uses a clean and optimized **star schema**, connecting a central fact table to supporting dimension tables for rich filtering and scalable performance.
 
 ### 🔸 Fact Table: `FACT_Transaction`
-Contains all sales transaction data:
-- Date of purchase  
-- Product & store references  
-- Sales, quantity, and unit price  
+- Sales transaction data: date, product ID, store ID, quantity, sales, unit price
 
 ### 🔹 Dimension Tables
-- DIM_Product
-- DIM_Store
-- Calendar
-  
----
+- `DIM_Product`: Product ID, Name, Category
+- `DIM_Store`: Store ID, Name, Location
+- `Calendar`: Date, Month, Quarter, Year (auto-generated)
+
+This data source is synthetic and manually curated to simulate real-world sales data for demonstration purposes. It is safe for public use.
+
+
+## 🧰 Tools & Technologies Used
+
+- Power BI Desktop (May 2023 version)
+- DAX
+- Power Query (M)
+- Excel (data preparation)
+
+## 🚀 How to Use
+
+1. Clone this repository or download the files
+2. Open the `.pbip` project in Power BI Desktop
+3. Ensure the `Data/` folder is in the same root directory
 
 ## 📬 Contact
-Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-baglio/) or reach out via email at s.baglio.personal@outlook.com.
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/stefano-baglio/)  
+📧 Email: s.baglio.personal@outlook.com
 
 ---
 
