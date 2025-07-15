@@ -106,10 +106,9 @@ This is a synthetic dataset curated for educational and portfolio purposes. It d
 
 ## 🧰 Tools & Technologies Used
 
-- Power BI Desktop (May 2023 or later)
-- DAX (Data Analysis Expressions)
-- Power Query (M Language)
-- Excel (CSV preprocessing)
+- Power BI Desktop
+- DAX
+- Power Query (M)
 
 
 ## 🚀 How to Use
