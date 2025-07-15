@@ -4,7 +4,7 @@ The **Media Campaign Dashboard** is an interactive Power BI report designed to e
 
 This project analyzes multi-channel campaign data over time, offering a comprehensive view of performance by campaign, platform, and time dimension.
 
-[Interactive dashboard](https://bit.ly/media-campaign-dashboard-app)
+[View Interactive dashboard](https://bit.ly/media-campaign-dashboard-app)
 
 ## 📌 Key Focus Areas
 
@@ -93,35 +93,52 @@ This project analyzes multi-channel campaign data over time, offering a comprehe
 
 ## 🛠️ Analytical Techniques & Visual Highlights
 
-### 💰 Financial Performance Analysis
+### 💰 Financial Performance
 
-- KPI Target Tracking: Evaluate financial KPIs against targets by month, campaign, and platform to assess goal achievement and budget impact
-- **Campaign Profitability Overview**: Assess profitability metrics by campaign to support ROI analysis and budget allocation decisions
+- KPI Target Tracking by month, campaign, and platform
+- Campaign-level ROI & profitability metrics
 
-### 🚀  Operational Performance Analysis
+### 🚀 Operational Performance
 
-- **Performance Trends**: Monitor **Click-Through Rate** (CTR), **Impression-to-Conversion Rate** (ICR), and **Conversion Rate** (CR) trends over time to track engagement and efficiency
-- **Monthly Benchmarking**: Compare CTR, ICR, and CR against monthly averages to identify performance peaks and gaps
-- **Pipeline Decomposition**: Break down the full conversion pipeline for CTR, ICR, and CR to understand stage-specific behavior
-- **Funnel Analysis**: Visualize the complete journey from impression to conversion to evaluate overall campaign effectiveness
-- **Heatmap by Campaign & Weekday**: Analyze CTR, ICR, and CR across campaigns and days of the week to uncover temporal performance patterns
+- CTR, ICR, and CR trend analysis
+- Monthly benchmarking against averages
+- Funnel performance breakdown (from impression to conversion)
+- Heatmaps by campaign and weekday for temporal analysis
 
 ## 🧩 Data Model Overview
 
-The report uses a clean and optimized star schema, connecting a central fact table to supporting dimension tables for rich filtering and scalable performance. All relationships are one-to-many from dimensions to the fact table, forming a robust analytical model.
+The report is structured using a star schema for optimized performance and flexible filtering.
 
 ### 🔸 Fact Table: `Metrics`
-Contains performance data of each campaign across time and platforms:
+- Campaign ID, Platform ID, Date
+- Impressions, Clicks, Conversions, CTR, ICR, CR
+- Costs, Revenue, Profit
 
 ### 🔹 Dimension Tables
-- Campaign
-- Platform
-- Calendar
+- `DIM_Campaign`: Campaign name, type, status
+- `DIM_Platform`: Platform name, channel category
+- `Calendar`: Date, Month, Quarter, Year
 
----
+## 📦 Data Source
+
+This is a synthetic dataset curated for marketing analytics demonstration and learning purposes. It does not reflect real campaign performance.
+
+## 🧰 Tools & Technologies Used
+
+- Power BI Desktop
+- DAX
+- Power Query (M)
+
+## 🚀 How to Use
+
+1. Download or clone this repository
+2. Open the `.pbip` project using Power BI Desktop
+3. Ensure the `/Data` folder with the Excel file is in the root directory
 
 ## 📬 Contact
-Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-baglio/) or reach out via email at s.baglio.personal@outlook.com.
+
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/stefano-baglio/)  
+📧 Email: s.baglio.personal@outlook.com
 
 ---
 
