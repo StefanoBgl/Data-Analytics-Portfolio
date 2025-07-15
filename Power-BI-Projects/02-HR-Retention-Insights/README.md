@@ -4,7 +4,7 @@ The **HR Analysis Dashboard** is an interactive Power BI report designed to deli
 
 Built on detailed employee records—including demographics, salary, job information, and exit data—the report offers a comprehensive view of workforce dynamics across time and organizational dimensions.
 
-[Interactive dashboard](https://bit.ly/3BZjYHg)
+[View Interactive dashboard](https://bit.ly/3BZjYHg)
 
 ## 📌 Key Focus Areas
 
@@ -67,46 +67,61 @@ Built on detailed employee records—including demographics, salary, job informa
 
 ## 🛠️ Analytical Techniques & Visual Highlights
 
-This dashboard employs interactive and high-impact visualizations to enable intuitive HR analysis:
-
 ### 📊 Workforce Composition
 
-- **Workforce breakdown** by gender for working employees, employees left, average and median salary
-- **Waffle charts** for gender, age, and ethnicity
-- **Lollipop chart** for salary across business unit, department, job title and job level
-- **Bar charts** for gender, age, and ethnicity
-
+- Waffle charts for gender, age, and ethnicity
+- Lollipop chart for salary comparisons by unit, department, title, and level
+- Bar charts for demographic breakdowns
+- Workforce breakdown by gender for employees retained vs. left
 
 ### 📈 Retention Trends
 
-- **Year-over-year KPIs** (Retention Rate, Turnover, employees left)
-- **Correlation between salary brackets and exit trends** by business unit, deparment, job level and job title
-- **Time intelligence Retetion Rate** breakdown by year, quarter, month
+- Year-over-year KPIs (Retention Rate, Turnover, Exits)
+- Correlation analysis between salary and exits
+- Time intelligence visuals (retention by year, quarter, month)
 
 
 ## 🧩 Data Model Overview
 
-The report uses a clean and optimized star schema, connecting a central fact table to supporting dimension tables for rich filtering and scalable performance. All relationships are one-to-many from dimensions to the fact table, forming a robust analytical model.
+This report follows a star schema with a central fact table and connected dimension tables for scalable performance and flexible filtering.
 
 ### 🔸 Fact Table: `FACT_Employees`
-Contains employee records with demographic and employment details:
-- Full name
-- Hire date
-- Exit date
-- Annual salary
+- Full Name
+- Hire Date
+- Exit Date
+- Annual Salary
 - Bonus %
 - Age
+- Demographic identifiers
 
 ### 🔹 Dimension Tables
-- DIM_Department
-- DIM_Location
-- DIM_JobTitle
-- Calendar
+- `DIM_Department`: Department, Business Unit
+- `DIM_Location`: Country, Region
+- `DIM_JobTitle`: Job Title, Level
+- `Calendar`: Date, Month, Year, Quarter
 
----
+## 📦 Data Source
+
+This is a **synthetic dataset** curated for educational and portfolio purposes. It does not contain any real or confidential employee data.
+
+## 🧰 Tools & Technologies Used
+
+- Power BI Desktop (May 2023 or later)
+- DAX (Data Analysis Expressions)
+- Power Query (M Language)
+- Excel (CSV preprocessing)
+
+
+## 🚀 How to Use
+
+1. Clone this repository or download the ZIP file
+2. Open the `.pbip` project in Power BI Desktop
+3. Ensure the `Data/` folder is in the root directory for correct data linkage
+
 
 ## 📬 Contact
-Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-baglio/) or reach out via email at s.baglio.personal@outlook.com.
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/stefano-baglio/)  
+📧 Email: s.baglio.personal@outlook.com
 
 ---
 
