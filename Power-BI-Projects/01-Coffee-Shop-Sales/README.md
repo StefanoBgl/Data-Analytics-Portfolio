@@ -75,10 +75,9 @@ This is a synthetic dataset curated for educational and portfolio purposes. It d
 
 ## 🧰 Tools & Technologies Used
 
-- Power BI Desktop (May 2023 version)
+- Power BI Desktop
 - DAX
 - Power Query (M)
-- Excel (data preparation)
 
 ## 🚀 How to Use
 
