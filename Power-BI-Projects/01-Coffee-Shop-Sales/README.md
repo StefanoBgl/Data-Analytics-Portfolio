@@ -69,8 +69,9 @@ The report uses a clean and optimized **star schema**, connecting a central fact
 - `DIM_Store`: Store ID, Name, Location
 - `Calendar`: Date, Month, Quarter, Year
 
-This data source is synthetic and manually curated to simulate real-world sales data for demonstration purposes. It is safe for public use.
+## 📦 Data Source
 
+This is a synthetic dataset curated for educational and portfolio purposes. It does not contain any real or confidential employee data.
 
 ## 🧰 Tools & Technologies Used
 
