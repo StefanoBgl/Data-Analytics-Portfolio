@@ -1,6 +1,5 @@
 # 🧑‍💼  Forecasting Workplace Absenteeism with Supervised Learning
 
-## 📌 Introduction
 This project analyzes employee absenteeism to uncover behavioral patterns and build predictive models that support workforce planning. Through data cleaning, exploratory analysis, and supervised learning, we aim to:
 
 - Understand trends, seasonality, and key factors influencing absenteeism.
