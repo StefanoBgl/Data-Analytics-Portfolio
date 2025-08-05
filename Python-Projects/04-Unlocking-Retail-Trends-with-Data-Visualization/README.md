@@ -5,7 +5,7 @@ This project explores the **Global Superstore** dataset to uncover hidden patter
 <!-- Row 1: 1st and 4th images side by side -->
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1cc85826-783b-465c-975e-a0f1f019a0bb" width="550"/>
-  <img src="https://github.com/user-attachments/assets/600a69ee-9a01-4973-8687-ac92e3985030" width="350"/>
+  <img src="https://github.com/user-attachments/assets/14df9351-fc03-4e5a-9062-a9ae213a354f" width="350"/>
 </p>
 
 <!-- Row 2: 2nd image full width -->
