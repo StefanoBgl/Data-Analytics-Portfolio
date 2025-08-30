@@ -55,6 +55,14 @@ I'm Stefano Baglio, a Data Analyst with hands-on experience in data exploration,
 │   │   ├── 📄 README.md  
 │   │   ├── 📄 Forecasting_Workplace_Absenteeism_with_Supervised_Learning.ipynb  
 │   │   └── 📁 Data  
+│   ├── 📁 04-Unlocking-Retail-Trends-with-Data-Visualization  
+│   │   ├── 📄 README.md  
+│   │   ├── 📄 Forecasting_Workplace_Absenteeism_with_Supervised_Learning.ipynb  
+│   │   └── 📁 Data  
+│   ├── 📁 05-Credit-Risk-Analys-Statistical-and-Inferential-Insights  
+│   │   ├── 📄 README.md  
+│   │   ├── 📄 Unlocking-Retail-Trends-with-Data-Visualization.ipynb  
+│   │   └── 📁 Data  
 │ <br>
 ├── 📁 PowerBI-Portfolio  
 │   ├── 📁 01-Coffee-Shop-Sales  
@@ -71,5 +79,4 @@ I'm Stefano Baglio, a Data Analyst with hands-on experience in data exploration,
 │   │   ├── 📄 README.md  
 │   │   ├── 📁 Data  
 │   │   ├── 📁 Images  
-│   │   └── 📁 pbip  
-
+└── └── └── 📁 pbip  
