@@ -79,4 +79,4 @@ I'm Stefano Baglio, a Data Analyst with hands-on experience in data exploration,
 │   │   ├── 📄 README.md  
 │   │   ├── 📁 Data  
 │   │   ├── 📁 Images  
-└── └── └── 📁 pbip  
+│   │   └── 📁 pbip  
