@@ -16,12 +16,11 @@ Welcome to my Data Analytics Portfolio, a curated collection of projects showcas
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/b51eddba-d579-4f61-ad15-9dc682555c18" width="300" height="500"/></td>
+    <td><img src="https://github.com/user-attachments/assets/5ac91efc-4746-4040-bddf-92fd998cd2d6" width="300" height="500"/></td>
     <td><img src="https://github.com/user-attachments/assets/15ee7967-0c80-4f7d-8967-bdb8ee4d4930" width="300" height="500"/></td>
     <td><img src="https://github.com/user-attachments/assets/c922ceb8-1daa-4d0a-88f5-eb4df6b1c602" width="300" height="500"/></td>
   </tr>
 </table>
-
 
 ### 👤 About Me
 
