@@ -7,11 +7,11 @@ The **Coffee Shop Dashboard** is an interactive Power BI report that provides a 
 ## 📌 Key Focus Areas
 1. **General Overview** — Top-level KPIs and sales performance by month, store, and category  
 2. **Customer Behaviour** — Patterns in buying time, transaction size, and underperforming product recovery
-   
+
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/9931d245-d98a-493b-982a-76e4b53067eb" width="500" height="300"/></td>
-    <td><img src="https://github.com/user-attachments/assets/f5777bd4-d9d4-4ab3-992f-e0cf736d5465" width="500" height="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/c40ff2c8-2345-4e68-b2e9-61270109664b" width="500" height="300"/></td>
+    <td><img src="https://github.com/user-attachments/assets/aec86452-7bad-4687-90b5-0f66367cbf1f" width="500" height="300"/></td>
   </tr>
 </table>
 
