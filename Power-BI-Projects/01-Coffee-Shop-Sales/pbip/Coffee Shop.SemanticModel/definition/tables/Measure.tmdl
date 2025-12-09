@@ -6,9 +6,9 @@ table Measure
 		displayFolder: Sales
 		lineageTag: 4738e82c-8f0a-4d34-b5b7-c36cc3294e7b
 
-	measure 'Total Transaction QTY' = SUM(FACT_Transaction[Transaction Qty])
+	measure 'Total Quantity' = SUM(FACT_Transaction[Transaction Qty])
 		formatString: #,0
-		displayFolder: Qty
+		displayFolder: Quantity
 		lineageTag: d4805cb3-17ad-4062-8b89-85687df4008c
 
 	measure 'Avg Unit Price' = AVERAGE(FACT_Transaction[Unit Price])
@@ -131,8 +131,8 @@ table Measure
 		displayFolder: Sales
 		lineageTag: d5276f03-a097-4503-b8c1-f98d8c696ec8
 
-	measure 'Average Transaction QTY' = AVERAGE(FACT_Transaction[Transaction Qty])
-		displayFolder: Qty
+	measure 'Average Transaction' = AVERAGE(FACT_Transaction[Transaction Qty])
+		displayFolder: Quantity
 		lineageTag: 0ae943bd-cdfe-40a6-be94-c1b022ea5e82
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -177,10 +177,56 @@ table Measure
 	measure 'Total Transaction Label' = "Total Transactions"
 		lineageTag: c13b069c-bca5-497c-a793-05c3bee7f5bf
 
-	measure 'Avg Qty * Price' =
+	measure MyUser = USERPRINCIPALNAME()
+		lineageTag: 851676b3-944e-4ad4-ab72-7400d29cf31a
+
+	measure Test =
 			
-			[Avg Unit Price] * [Average Transaction QTY]
-		lineageTag: c72e1932-0f9c-43b7-9d17-7c13ba45eae9
+			
+			VAR MaxSales =
+			    // MAXX(
+			    //     ALLSELECTED('Calendar'[Day]),
+			    //     [Total Sales]
+			    // )
+			    MAXX(
+			        ALLSELECTED('Calendar'[Week of Month], 'Calendar'[Week Day], 'Calendar'[Day of Week]),
+			        [Total Sales]
+			    )
+			
+			VAR Threshold = MaxSales*0.6
+			
+			VAR SetColor =
+			    IF(
+			        [Total Sales] > Threshold, "#FFFFFF",
+			        "#000000"
+			    )
+			
+			RETURN SetColor
+		lineageTag: 19b652b1-760c-4cad-94e3-8f464d460b10
+
+	measure 'Test 2' =
+			
+			
+			VAR MaxSales =
+			    // MAXX(
+			    //     ALLSELECTED('Calendar'[Day]),
+			    //     [Total Sales]
+			    // )
+			    MAXX(
+			        ALLSELECTED('Calendar'[Week of Month], 'Calendar'[Week Day], 'Calendar'[Day of Week]),
+			        [Total Sales]
+			    )
+			
+			VAR Threshold = MaxSales*0.7
+			
+			VAR SetColor =
+			    IF(
+			        [Total Sales] > Threshold, "#FFFFFF",
+			        "#000000"
+			    )
+			
+			RETURN Threshold
+		lineageTag: 402eabb2-c404-406c-83eb-c4f8591f1048
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

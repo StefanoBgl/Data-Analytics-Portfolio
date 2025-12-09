@@ -1,0 +1,134 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "c5d2f389747ebbc0c1b7",
+  "displayName": "Customer Behaviour",
+  "displayOption": "FitToPage",
+  "height": 800,
+  "width": 1395,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 0,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Background layer Customer Behaviour.JPG'"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "ResourcePackageItem": {
+                    "PackageName": "RegisteredResources",
+                    "PackageType": 1,
+                    "ItemName": "Background_layer_Customer_Beha13576379793708815.JPG"
+                  }
+                }
+              },
+              "scaling": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'Fill'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "422632af65d2ea7fa133",
+      "target": "f7363180fbd85691b8a0",
+      "type": "HighlightFilter"
+    },
+    {
+      "source": "acdb63c3f7b018785d93",
+      "target": "f7363180fbd85691b8a0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "4b7393d354d44586e585",
+      "target": "f7363180fbd85691b8a0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8db1a5410905117b2d33",
+      "target": "f7363180fbd85691b8a0",
+      "type": "DataFilter"
+    },
+    {
+      "source": "886518892e5eaee4b95d",
+      "target": "f7363180fbd85691b8a0",
+      "type": "HighlightFilter"
+    },
+    {
+      "source": "4b7393d354d44586e585",
+      "target": "8db1a5410905117b2d33",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8db1a5410905117b2d33",
+      "target": "4b7393d354d44586e585",
+      "type": "DataFilter"
+    },
+    {
+      "source": "886518892e5eaee4b95d",
+      "target": "4b7393d354d44586e585",
+      "type": "DataFilter"
+    },
+    {
+      "source": "886518892e5eaee4b95d",
+      "target": "8db1a5410905117b2d33",
+      "type": "DataFilter"
+    },
+    {
+      "source": "422632af65d2ea7fa133",
+      "target": "4b7393d354d44586e585",
+      "type": "DataFilter"
+    },
+    {
+      "source": "422632af65d2ea7fa133",
+      "target": "8db1a5410905117b2d33",
+      "type": "DataFilter"
+    },
+    {
+      "source": "886518892e5eaee4b95d",
+      "target": "422632af65d2ea7fa133",
+      "type": "NoFilter"
+    },
+    {
+      "source": "acdb63c3f7b018785d93",
+      "target": "4b7393d354d44586e585",
+      "type": "DataFilter"
+    },
+    {
+      "source": "acdb63c3f7b018785d93",
+      "target": "8db1a5410905117b2d33",
+      "type": "DataFilter"
+    }
+  ]
+}

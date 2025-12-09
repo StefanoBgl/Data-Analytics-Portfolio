@@ -2,7 +2,7 @@ cultureInfo en-US
 
 	linguisticMetadata =
 			{
-			  "Version": "3.5.0",
+			  "Version": "4.1.0",
 			  "Language": "en-US",
 			  "Entities": {
 			    "DIM_product": {
@@ -2057,16 +2057,6 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.609
 			          }
-			        },
-			        {
-			          "Week": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -2464,44 +2454,124 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.total_transaction_QTY": {
+			    "measure.total_transactions": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Measure",
-			          "ConceptualProperty": "Total Transaction QTY"
+			          "ConceptualProperty": "Total Quantity"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "total transaction QTY": {
+			          "total transactions": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "QTY": {
+			          "transactions": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
 			        },
 			        {
-			          "aggregate transaction qty": {
+			          "aggregate transaction": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.582
 			          }
 			        },
 			        {
-			          "overall transaction qty": {
+			          "overall transaction": {
 			            "Type": "Noun",
 			            "State": "Suggested",
 			            "Source": {
 			              "Agent": "Thesaurus"
 			            },
-			            "Weight": 0.591
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "total connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "connection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "relation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "total dealing": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "total contact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "total communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "total business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
 			          }
 			        },
 			        {
@@ -2516,7 +2586,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.average_unit_price": {
+			    "measure.avg_unit_price": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Measure",
@@ -2558,16 +2628,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.609
-			          }
-			        },
-			        {
-			          "average unit price": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
 			          }
 			        },
 			        {
@@ -2628,6 +2688,26 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "avg unit value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "Unit Price": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -2738,7 +2818,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.color_for_avg_month_sales": {
+			    "measure.color_for_month_sales": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Measure",
@@ -3494,24 +3574,124 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure.average_transaction_QTY": {
+			    "measure.average_transaction": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "Measure",
-			          "ConceptualProperty": "Average Transaction QTY"
+			          "ConceptualProperty": "Average Transaction"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "average transaction QTY": {
+			          "average transaction": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "QTY": {
+			          "transaction": {
 			            "State": "Generated",
 			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "average operation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "operation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "average deal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "average business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "average contract": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "average matter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "deal": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "business": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "contract": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "matter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
 			          }
 			        }
 			      ]
@@ -4181,23 +4361,370 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "measure.my_user": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Measure",
+			          "ConceptualProperty": "MyUser"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "my user": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "MyUser": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "my operator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "my worker": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "my employer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "my manipulator": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "my handler": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "my manager": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "my consumer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "my customer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "my client": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "my punter": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "user_store": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "UserStore"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "user store": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "UserStore": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "user accumulation": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "user collection": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "user stock": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "user supply": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "user stockpile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "user hoard": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "user mass": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "user pile": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "user storehouse": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        },
+			        {
+			          "user storeroom": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.475
+			          }
+			        }
+			      ]
+			    },
+			    "user_store.email": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "UserStore",
+			          "ConceptualProperty": "Email"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "email": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "correspondence": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.476
+			          }
+			        },
+			        {
+			          "message": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        },
+			        {
+			          "communication": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.452
+			          }
+			        }
+			      ]
+			    },
+			    "user_store.store_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "UserStore",
+			          "ConceptualProperty": "Store ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "store ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "store identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "store identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "store identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "store credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "FACT_transaction_has_DIM_product": {
+			    "user_store_has_email": {
 			      "Binding": {
-			        "ConceptualEntity": "FACT_Transaction"
+			        "ConceptualEntity": "UserStore"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "FACT_transaction": {
+			        "user_store": {
 			          "Target": {
-			            "Entity": "FACT_transaction"
+			            "Entity": "user_store"
 			          }
 			        },
-			        "DIM_product": {
+			        "user_store.email": {
 			          "Target": {
-			            "Entity": "DIM_product"
+			            "Entity": "user_store.email"
 			          }
 			        }
 			      },
@@ -4205,28 +4732,48 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "FACT_transaction"
+			              "Role": "user_store"
 			            },
 			            "Object": {
-			              "Role": "DIM_product"
+			              "Role": "user_store.email"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "FACT_transactions_have_DIM_products"
+			          "ID": "user_stores_have_emails"
+			        }
+			      ]
+			    },
+			    "measure_has_my_user": {
+			      "Binding": {
+			        "ConceptualEntity": "Measure"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "measure": {
+			          "Target": {
+			            "Entity": "measure"
+			          }
 			        },
+			        "measure.my_user": {
+			          "Target": {
+			            "Entity": "measure.my_user"
+			          }
+			        }
+			      },
+			      "Phrasings": [
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "DIM_product"
+			              "Role": "measure"
 			            },
 			            "Object": {
-			              "Role": "FACT_transaction"
+			              "Role": "measure.my_user"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "DIM_products_have_FACT_transactions"
+			          "ID": "measures_have_my_user"
 			        }
 			      ]
 			    },
@@ -4428,7 +4975,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "FACT_transaction_has_measure_average_transaction_QTY": {
+			    "FACT_transaction_has_measure_average_transaction": {
 			      "Binding": {
 			        "ConceptualEntity": "FACT_Transaction"
 			      },
@@ -4439,9 +4986,9 @@ cultureInfo en-US
 			            "Entity": "FACT_transaction"
 			          }
 			        },
-			        "measure.average_transaction_QTY": {
+			        "measure.average_transaction": {
 			          "Target": {
-			            "Entity": "measure.average_transaction_QTY"
+			            "Entity": "measure.average_transaction"
 			          }
 			        }
 			      },
@@ -4452,12 +4999,12 @@ cultureInfo en-US
 			              "Role": "FACT_transaction"
 			            },
 			            "Object": {
-			              "Role": "measure.average_transaction_QTY"
+			              "Role": "measure.average_transaction"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "FACT_transactions_have_average_transaction_QTY"
+			          "ID": "FACT_transactions_have_average_transaction"
 			        }
 			      ]
 			    },
@@ -4527,15 +5074,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_color_for_category_sales": {
+			    "FACT_transaction_has_measure_color_for_category_sales": {
 			      "Binding": {
-			        "ConceptualEntity": "Measure"
+			        "ConceptualEntity": "FACT_Transaction"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "FACT_transaction": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "FACT_transaction"
 			          }
 			        },
 			        "measure.color_for_category_sales": {
@@ -4548,7 +5095,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "FACT_transaction"
 			            },
 			            "Object": {
 			              "Role": "measure.color_for_category_sales"
@@ -4556,12 +5103,12 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_color_for_category_sales"
+			          "ID": "FACT_transactions_have_color_for_category_sales"
 			        },
 			        {
 			          "Verb": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "FACT_transaction"
 			            },
 			            "Verbs": [
 			              {
@@ -4587,7 +5134,71 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.95,
-			          "ID": "measures_color_for_color_for_category_sales"
+			          "ID": "FACT_transactions_color_for_color_for_category_sales"
+			        }
+			      ]
+			    },
+			    "DIM_product_has_measure_color_for_category_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_Product"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "DIM_product": {
+			          "Target": {
+			            "Entity": "DIM_product"
+			          }
+			        },
+			        "measure.color_for_category_sales": {
+			          "Target": {
+			            "Entity": "measure.color_for_category_sales"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DIM_product"
+			            },
+			            "Object": {
+			              "Role": "measure.color_for_category_sales"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DIM_products_have_color_for_category_sales"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "DIM_product"
+			            },
+			            "Verbs": [
+			              {
+			                "color": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "for": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "measure.color_for_category_sales"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "DIM_products_color_for_color_for_category_sales"
 			        }
 			      ]
 			    },
@@ -4624,15 +5235,15 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_sales_change_format": {
+			    "FACT_transaction_has_measure_sales_change_format": {
 			      "Binding": {
-			        "ConceptualEntity": "Measure"
+			        "ConceptualEntity": "FACT_Transaction"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "FACT_transaction": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "FACT_transaction"
 			          }
 			        },
 			        "measure.sales_change_format": {
@@ -4645,7 +5256,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "FACT_transaction"
 			            },
 			            "Object": {
 			              "Role": "measure.sales_change_format"
@@ -4653,7 +5264,7 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have__sales_change_format"
+			          "ID": "FACT_transactions_have__sales_change_format"
 			        }
 			      ]
 			    },
@@ -4690,20 +5301,20 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "measure_has_color_for_avg_month_sales": {
+			    "FACT_transaction_has_measure_color_for_month_sales": {
 			      "Binding": {
-			        "ConceptualEntity": "Measure"
+			        "ConceptualEntity": "FACT_Transaction"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "FACT_transaction": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "FACT_transaction"
 			          }
 			        },
-			        "measure.color_for_avg_month_sales": {
+			        "measure.color_for_month_sales": {
 			          "Target": {
-			            "Entity": "measure.color_for_avg_month_sales"
+			            "Entity": "measure.color_for_month_sales"
 			          }
 			        }
 			      },
@@ -4711,20 +5322,20 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "FACT_transaction"
 			            },
 			            "Object": {
-			              "Role": "measure.color_for_avg_month_sales"
+			              "Role": "measure.color_for_month_sales"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_color_for_month_sales"
+			          "ID": "FACT_transactions_have_color_for_month_sales"
 			        },
 			        {
 			          "Verb": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "FACT_transaction"
 			            },
 			            "Verbs": [
 			              {
@@ -4743,26 +5354,90 @@ cultureInfo en-US
 			                  }
 			                ],
 			                "Object": {
-			                  "Role": "measure.color_for_avg_month_sales"
+			                  "Role": "measure.color_for_month_sales"
 			                }
 			              }
 			            ]
 			          },
 			          "State": "Generated",
 			          "Weight": 0.95,
-			          "ID": "measures_color_for_color_for_month_sales"
+			          "ID": "FACT_transactions_color_for_color_for_month_sales"
 			        }
 			      ]
 			    },
-			    "measure_has_average_month_sales": {
+			    "calendar_has_measure_color_for_month_sales": {
 			      "Binding": {
-			        "ConceptualEntity": "Measure"
+			        "ConceptualEntity": "Calendar"
 			      },
 			      "State": "Generated",
 			      "Roles": {
-			        "measure": {
+			        "calendar": {
 			          "Target": {
-			            "Entity": "measure"
+			            "Entity": "calendar"
+			          }
+			        },
+			        "measure.color_for_month_sales": {
+			          "Target": {
+			            "Entity": "measure.color_for_month_sales"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "measure.color_for_month_sales"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_color_for_month_sales"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Verbs": [
+			              {
+			                "color": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "PrepositionalPhrases": [
+			              {
+			                "Prepositions": [
+			                  {
+			                    "for": {
+			                      "State": "Generated"
+			                    }
+			                  }
+			                ],
+			                "Object": {
+			                  "Role": "measure.color_for_month_sales"
+			                }
+			              }
+			            ]
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "calendars_color_for_color_for_month_sales"
+			        }
+			      ]
+			    },
+			    "FACT_transaction_has_measure_average_month_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_Transaction"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "FACT_transaction": {
+			          "Target": {
+			            "Entity": "FACT_transaction"
 			          }
 			        },
 			        "measure.average_month_sales": {
@@ -4775,7 +5450,7 @@ cultureInfo en-US
 			        {
 			          "Attribute": {
 			            "Subject": {
-			              "Role": "measure"
+			              "Role": "FACT_transaction"
 			            },
 			            "Object": {
 			              "Role": "measure.average_month_sales"
@@ -4783,7 +5458,40 @@ cultureInfo en-US
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "measures_have_average_month_sales"
+			          "ID": "FACT_transactions_have_average_month_sales"
+			        }
+			      ]
+			    },
+			    "calendar_has_measure_average_month_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "Calendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "calendar": {
+			          "Target": {
+			            "Entity": "calendar"
+			          }
+			        },
+			        "measure.average_month_sales": {
+			          "Target": {
+			            "Entity": "measure.average_month_sales"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "calendar"
+			            },
+			            "Object": {
+			              "Role": "measure.average_month_sales"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "calendars_have_average_month_sales"
 			        }
 			      ]
 			    },
@@ -4820,7 +5528,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "FACT_transaction_has_measure_average_unit_price": {
+			    "FACT_transaction_has_measure_avg_unit_price": {
 			      "Binding": {
 			        "ConceptualEntity": "FACT_Transaction"
 			      },
@@ -4831,9 +5539,9 @@ cultureInfo en-US
 			            "Entity": "FACT_transaction"
 			          }
 			        },
-			        "measure.average_unit_price": {
+			        "measure.avg_unit_price": {
 			          "Target": {
-			            "Entity": "measure.average_unit_price"
+			            "Entity": "measure.avg_unit_price"
 			          }
 			        }
 			      },
@@ -4844,7 +5552,7 @@ cultureInfo en-US
 			              "Role": "FACT_transaction"
 			            },
 			            "Object": {
-			              "Role": "measure.average_unit_price"
+			              "Role": "measure.avg_unit_price"
 			            }
 			          },
 			          "State": "Generated",
@@ -4853,7 +5561,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "FACT_transaction_has_measure_total_transaction_QTY": {
+			    "FACT_transaction_has_measure_total_transactions": {
 			      "Binding": {
 			        "ConceptualEntity": "FACT_Transaction"
 			      },
@@ -4864,9 +5572,9 @@ cultureInfo en-US
 			            "Entity": "FACT_transaction"
 			          }
 			        },
-			        "measure.total_transaction_QTY": {
+			        "measure.total_transactions": {
 			          "Target": {
-			            "Entity": "measure.total_transaction_QTY"
+			            "Entity": "measure.total_transactions"
 			          }
 			        }
 			      },
@@ -4877,12 +5585,12 @@ cultureInfo en-US
 			              "Role": "FACT_transaction"
 			            },
 			            "Object": {
-			              "Role": "measure.total_transaction_QTY"
+			              "Role": "measure.total_transactions"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "FACT_transactions_have_total_transaction_QTY"
+			          "ID": "FACT_transactions_have_total_transactions"
 			        }
 			      ]
 			    },
@@ -5936,6 +6644,85 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "user_store_has_store_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "UserStore"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "user_store": {
+			          "Target": {
+			            "Entity": "user_store"
+			          }
+			        },
+			        "user_store.store_ID": {
+			          "Target": {
+			            "Entity": "user_store.store_ID"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "user_store"
+			            },
+			            "Object": {
+			              "Role": "user_store.store_ID"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "user_stores_have_store_ID"
+			        }
+			      ]
+			    },
+			    "FACT_transaction_has_DIM_product": {
+			      "Binding": {
+			        "ConceptualEntity": "FACT_Transaction"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "FACT_transaction": {
+			          "Target": {
+			            "Entity": "FACT_transaction"
+			          }
+			        },
+			        "DIM_product": {
+			          "Target": {
+			            "Entity": "DIM_product"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "FACT_transaction"
+			            },
+			            "Object": {
+			              "Role": "DIM_product"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "FACT_transactions_have_DIM_products"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "DIM_product"
+			            },
+			            "Object": {
+			              "Role": "FACT_transaction"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "DIM_products_have_FACT_transactions"
+			        }
+			      ]
+			    },
 			    "FACT_transaction_has_calendar": {
 			      "Binding": {
 			        "ConceptualEntity": "FACT_Transaction"
@@ -6060,6 +6847,11 @@ cultureInfo en-US
 			          "ID": "date_hierarchies_have_years"
 			        }
 			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
 			    }
 			  }
 			}

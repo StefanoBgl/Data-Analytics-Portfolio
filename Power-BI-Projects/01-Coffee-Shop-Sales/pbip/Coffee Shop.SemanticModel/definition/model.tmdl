@@ -20,9 +20,7 @@ queryGroup Dimensions
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBIDesktopVersion = 2.144.1155.0 (25.06)+46435b07013d2a234d7fd007083a9e70b8e79f1c
-
-annotation PBI_QueryOrder = ["DIM_Product","DIM_Store","FACT_Transaction","Parameter1","Transform Sample File","Sample File","Transform File","Calendar","Measure","Cluster Slicer"]
+annotation PBI_QueryOrder = ["DIM_Product","DIM_Store","FACT_Transaction","Parameter1","Transform Sample File","Sample File","Transform File","Calendar","Measure","Cluster Slicer","UserStore"]
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -31,6 +29,7 @@ ref table DIM_Store
 ref table FACT_Transaction
 ref table Calendar
 ref table Measure
+ref table UserStore
 
 ref cultureInfo en-US
 

@@ -2,7 +2,9 @@ expression Parameter1 = #"Sample File" meta [IsParameterQuery=true, BinaryIdenti
 	lineageTag: e80400e5-5f38-4803-bdf5-5a40e0f9b8fc
 	queryGroup: 'Transform File from Transaction\Helper Queries'
 
-	annotation PBI_ResultType = Binary
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
 
 expression 'Transform Sample File' =
 		let
@@ -18,7 +20,7 @@ expression 'Transform Sample File' =
 
 expression 'Sample File' =
 		let
-		    Source = Folder.Files("D:\PBI Course - Anh Leimer\1. Dataset\Transaction"),
+		    Source = Folder.Files("D:\Accelerate Career with Power BI\Project 1 - Coffee Shop\1. Dataset\Transaction"),
 		    Navigation1 = Source{0}[Content]
 		in
 		    Navigation1
@@ -26,6 +28,8 @@ expression 'Sample File' =
 	queryGroup: 'Transform File from Transaction\Helper Queries'
 
 	annotation PBI_ResultType = Binary
+
+	annotation PBI_NavigationStepName = Navigation
 
 expression 'Transform File' =
 		let

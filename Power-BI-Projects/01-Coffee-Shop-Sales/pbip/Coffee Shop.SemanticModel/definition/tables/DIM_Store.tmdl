@@ -23,7 +23,7 @@ table DIM_Store
 		queryGroup: Dimensions
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("D:\PBI Course - Anh Leimer\1. Dataset\Store.xlsx"), null, true),
+				    Source = Excel.Workbook(File.Contents("D:\Accelerate Career with Power BI\Project 1 - Coffee Shop\1. Dataset\Store.xlsx"), null, true),
 				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"location_id", Int64.Type}, {"store", type text}}),
