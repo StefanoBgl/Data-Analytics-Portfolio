@@ -31,9 +31,10 @@ I'm Stefano Baglio, a Data Analyst with hands-on experience in data exploration,
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stefano-baglio/)
 <br>
-<a href="mailto:your.email@example.com">
+<a href="mailto:s.baglio.personal@outlook.com">
   <img src="https://img.shields.io/badge/Email-cccccc?style=for-the-badge&logo=gmail&logoColor=black" alt="Email" />
 </a>
+
 
 
 
