@@ -87,8 +87,12 @@ Clusters can be leveraged to guide **targeted promotions and business strategies
 
 
 ## 📬 Contact
-Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-baglio/) or reach out via email at s.baglio.personal@outlook.com.
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stefano-baglio/)
+<br>
+<a href="mailto:s.baglio.personal@outlook.com">
+  <img src="https://img.shields.io/badge/Email-cccccc?style=for-the-badge&logo=gmail&logoColor=black" alt="Email" />
+</a>
 
 ## 🗂️ Folder Structure
 
