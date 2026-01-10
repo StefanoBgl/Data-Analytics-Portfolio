@@ -2,7 +2,7 @@
 
 The **Coffee Shop Dashboard** is an interactive Power BI report that provides a comprehensive analysis of a coffee shop’s performance across time, stores, and product categories. Built on transaction data from a 6-month period in 2023, the report is designed to help stakeholders uncover patterns, optimize promotions, and make data-driven decisions.
 
-[View Interactive dashboard](https://bit.ly/3Oih8Qe)
+[View Interactive dashboard](https://app.powerbi.com/view?r=eyJrIjoiNmU5ZDFhMWYtNzY3Yy00NTVkLTlhNDItNGQ4YjUyZGRhNTRjIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
 
 ## 📌 Key Focus Areas
 1. **General Overview** — Top-level KPIs and sales performance by month, store, and category  
