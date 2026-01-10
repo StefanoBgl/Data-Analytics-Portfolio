@@ -4,7 +4,7 @@ The **HR Analysis Dashboard** is an interactive Power BI report designed to deli
 
 Built on detailed employee records—including demographics, salary, job information, and exit data—the report offers a comprehensive view of workforce dynamics across time and organizational dimensions.
 
-[View Interactive dashboard](https://bit.ly/3BZjYHg)
+[View Interactive dashboard](https://app.powerbi.com/view?r=eyJrIjoiNjUyOGM0YmEtYWFmZC00ZmYzLTgyNWItNzA5MWMwODQyM2Y1IiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
 
 ## 📌 Key Focus Areas
 
