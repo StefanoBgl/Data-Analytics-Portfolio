@@ -119,8 +119,12 @@ This is a synthetic dataset curated for educational and portfolio purposes. It d
 
 
 ## 📬 Contact
-Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/stefano-baglio/)  
-📧 Email: s.baglio.personal@outlook.com
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stefano-baglio/)
+<br>
+<a href="mailto:s.baglio.personal@outlook.com">
+  <img src="https://img.shields.io/badge/Email-cccccc?style=for-the-badge&logo=gmail&logoColor=black" alt="Email" />
+</a>
 
 ---
 
