@@ -4,7 +4,7 @@ The **Media Campaign Dashboard** is an interactive Power BI report designed to e
 
 This project analyzes multi-channel campaign data over time, offering a comprehensive view of performance by campaign, platform, and time dimension.
 
-[View Interactive dashboard](https://bit.ly/media-campaign-dashboard-app)
+[View Interactive dashboard](https://app.powerbi.com/view?r=eyJrIjoiYmE0NjJlYWUtYzQ1Yy00YjRlLWIwMjYtMDExMzY5MTQxMDVmIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9)
 
 ## 📌 Key Focus Areas
 
