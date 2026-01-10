@@ -2,6 +2,10 @@
 
 This project investigates credit behavior across different client demographics using inferential statistics. We aim to identify whether variables such as gender, age, and employment type are associated with significant differences in credit default rates, loan amounts, and loan durations. By applying hypothesis testing and correlation analysis, we seek to uncover meaningful patterns in the data to support data-informed decisions in fair and responsible credit lending.
 
+<img width="2090" height="590" alt="image" src="https://github.com/user-attachments/assets/d30bd678-6553-433e-90ec-0f51793a963f" />
+<img width="1276" height="396" alt="image" src="https://github.com/user-attachments/assets/3fb1054c-7968-4949-b46a-07a9c3206822" />
+
+
 ## 🗃️ Dataset Overview
 
 The dataset includes records for 1,000 credit applicants with the following attributes:
@@ -52,14 +56,18 @@ The dataset includes records for 1,000 credit applicants with the following attr
 - **Job Analysis:** Identified how skill level impacts the total credit amount requested.
 
 ## 📬 Contact
-Feel free to connect with me on [Linkedin](https://www.linkedin.com/in/stefano-baglio/) or reach out via email at s.baglio.personal@outlook.com.
 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/stefano-baglio/)
+<br>
+<a href="mailto:s.baglio.personal@outlook.com">
+  <img src="https://img.shields.io/badge/Email-cccccc?style=for-the-badge&logo=gmail&logoColor=black" alt="Email" />
+</a>
 ## 🗂️ Folder Structure
 
 ```bash
-📁 Credit-Risk-Analysis-Statistical-and-Inferential-Insights/
+📁 05-Credit-Risk-Analysis-Statistical-and-Inferential-Insights/
 │
 ├── 📓 Credit Risk Analysis - Statistical and Inferential Insights.ipynb
 ├── 📄 README.md
 └── 📁 Data
-    └── 📄 german_credit_data.csv
+    └── 📄 German_credit_risk.csv
