@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "c5d2f389747ebbc0c1b7",
   "displayName": "Customer Behaviour",
   "displayOption": "FitToPage",
@@ -88,12 +88,12 @@
     {
       "source": "4b7393d354d44586e585",
       "target": "8db1a5410905117b2d33",
-      "type": "DataFilter"
+      "type": "NoFilter"
     },
     {
       "source": "8db1a5410905117b2d33",
       "target": "4b7393d354d44586e585",
-      "type": "DataFilter"
+      "type": "NoFilter"
     },
     {
       "source": "886518892e5eaee4b95d",

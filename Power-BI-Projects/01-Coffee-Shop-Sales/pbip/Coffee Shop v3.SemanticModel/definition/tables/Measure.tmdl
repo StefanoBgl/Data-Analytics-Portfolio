@@ -50,8 +50,7 @@ table Measure
 			    )
 			VAR FormatColor =
 			    IF(
-			        [Total Sales] >= AverageMonthSales, 
-			        "#7F5539",
+			        [Total Sales] >= AverageMonthSales, "#7F5539",
 			        --"#e6ccb2"
 			        "#dcc9b6"
 			    )

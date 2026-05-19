@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/1.4.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
   "displayName": "Clear Overview",
   "name": "59847083875838b090e4",
   "options": {
@@ -694,12 +694,6 @@
               }
             }
           },
-          "41eaf1e9a518c28e0e9a": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
           "ce3472d3c3df3f992050": {
             "filters": {
               "byExpr": [
@@ -1012,12 +1006,6 @@
               }
             }
           },
-          "76591d7b32178d8267e1": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
           "f783bd634716cfc06279": {
             "filters": {
               "byExpr": [
@@ -1110,12 +1098,6 @@
                   }
                 ]
               }
-            }
-          },
-          "cd735d3b40c4f08ea00a": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
             }
           }
         },
