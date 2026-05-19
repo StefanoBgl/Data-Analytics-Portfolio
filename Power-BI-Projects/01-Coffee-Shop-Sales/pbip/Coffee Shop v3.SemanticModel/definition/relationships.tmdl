@@ -1,0 +1,12 @@
+relationship AutoDetected_f8b47320-8c65-44fa-8d5b-e010bc8438a7
+	fromColumn: FACT_Transaction.'Product Id'
+	toColumn: DIM_Product.'Product Id'
+
+relationship e11e1f84-1377-63d7-c37c-ff9140099522
+	fromColumn: FACT_Transaction.'Transaction Date'
+	toColumn: Calendar.Date
+
+relationship fb431f0a-f78a-6b42-61e6-4e5c43a017ef
+	fromColumn: FACT_Transaction.'Store Id'
+	toColumn: DIM_Store.location_id
+
