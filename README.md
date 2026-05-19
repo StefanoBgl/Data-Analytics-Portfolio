@@ -43,6 +43,7 @@ I'm Stefano Baglio, a Data Analyst with hands-on experience in data exploration,
 
 📦 **Data-Analytics-Portfolio**  
 ├── 📄 README.md  
+
 ├── 📁 Python-Projects  
 │   ├── 📁 01-Understanding-Customer-Behaviour-in-Supermarket-Sales  
 │   │   ├── 📄 README.md  
