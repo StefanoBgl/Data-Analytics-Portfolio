@@ -2,12 +2,6 @@
 
 This project explores the **Global Superstore** dataset to uncover hidden patterns and strategic insights through data visualization. The objective is to analyze performance across sales, profitability, customer segments, and logistics to inform data-driven decisions in retail operations.
 
-<!-- Row 1: 1st and 4th images side by side -->
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/1cc85826-783b-465c-975e-a0f1f019a0bb" width="550"/>
-  <img src="https://github.com/user-attachments/assets/14df9351-fc03-4e5a-9062-a9ae213a354f" width="350"/>
-</p>
-
 <!-- Row 2: 2nd image full width -->
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ecbba33a-bccc-4baf-9fcc-8558c0bcda29" />
