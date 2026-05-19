@@ -1,0 +1,64 @@
+table ClusterMappingTable
+	isHidden
+	isPrivate
+	lineageTag: 13ad0816-49b9-4057-963c-14f671b1d35e
+
+	column Product
+		lineageTag: 1737d7fe-ef04-4907-824d-9f18c9658a08
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Product]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column ClusterId
+		formatString: 0
+		lineageTag: 6e1d5cdb-c3f3-4f5a-ac8f-2c6c1bbbe7d0
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: [ClusterId]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	partition ClusterMappingTable = calculated
+		mode: import
+		source = ```
+				VAR __DS0FilterTable = 
+					TREATAS({"June"}, 'Calendar'[Month Name Full])
+				
+				VAR __DS0Core = 
+					SUMMARIZECOLUMNS(
+						'DIM_Product'[Product],
+						__DS0FilterTable,
+						"AverageTransaction_Qty", CALCULATE(AVERAGE('FACT_Transaction'[Transaction Qty])),
+						"Avg_Unit_Price", 'Measure'[Avg Unit Price]
+					)
+				
+				VAR __DataTransformT0 = 
+					KMeansClustering(
+						SELECTCOLUMNS(
+							__DS0Core,
+							"Product", 'DIM_Product'[Product],
+							"AverageTransaction_Qty", [AverageTransaction_Qty],
+							"Avg_Unit_Price", [Avg_Unit_Price]
+						),
+						{("[AverageTransaction_Qty]", "Attribute"),
+							("[Product]", "Item"),
+							("[Avg_Unit_Price]", "Attribute")},
+						{("[Product]", BLANK()),
+							("ClusterId", "ClusterId")},
+						4
+					)
+				
+				RETURN __DataTransformT0
+				```
+			retainDataTillForceCalculate
+
+	annotation ClusterMappingTable = true
+
+	annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
+

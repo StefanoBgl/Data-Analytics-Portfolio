@@ -1,0 +1,35 @@
+table UserStore
+	lineageTag: eae29407-ceb8-4c30-9f78-3a64e23d790a
+
+	column Email
+		dataType: string
+		lineageTag: 6d16485a-16b9-4996-8c93-04e8da0a71ad
+		summarizeBy: none
+		sourceColumn: Email
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Store ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: c821c6db-b8fc-4b61-a42b-d01cff1f83c5
+		summarizeBy: count
+		sourceColumn: Store ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition UserStore = m
+		mode: import
+		queryGroup: Dimensions
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Accelerate Career with Power BI\Project 1 - Coffee Shop\1. Dataset\UserStore.txt"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Email", type text}, {"Store ID", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

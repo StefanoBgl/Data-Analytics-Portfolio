@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Coffee Shop v3"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dde43273-35b3-4beb-b92b-b5242d9b7450"
+  }
+}
