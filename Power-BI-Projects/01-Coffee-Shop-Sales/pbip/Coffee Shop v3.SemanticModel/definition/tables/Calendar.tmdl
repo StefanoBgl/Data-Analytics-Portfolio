@@ -23,48 +23,11 @@ table Calendar
 
 		annotation SummarizationSetBy = Automatic
 
-	column Quarter
-		dataType: int64
-		formatString: 0
-		lineageTag: 2b5726f7-4963-49fd-9611-a8f4b41351a3
-		summarizeBy: none
-		sourceColumn: Quarter
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Quarter Year'
-		dataType: string
-		lineageTag: 2b5db0d5-4559-4838-a975-0d30f4ba0f44
-		summarizeBy: none
-		sourceColumn: Quarter Year
-
-		annotation SummarizationSetBy = Automatic
-
-	column Month
-		dataType: int64
-		formatString: 0
-		lineageTag: e1540160-e5bc-4544-8b6c-be3a2a3b3e0e
-		summarizeBy: none
-		sourceColumn: Month
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Month Name'
 		dataType: string
 		lineageTag: 2d3db67b-a2a5-4fb1-9f96-749780b85a6e
 		summarizeBy: none
 		sourceColumn: Month Name
-		sortByColumn: 'Month Year S'
-
-		changedProperty = SortByColumn
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Month Year'
-		dataType: string
-		lineageTag: b90c76e0-16ce-4f6d-99d8-ed9661d0b1a2
-		summarizeBy: none
-		sourceColumn: Month Year
 		sortByColumn: 'Month Year S'
 
 		changedProperty = SortByColumn
@@ -79,17 +42,6 @@ table Calendar
 		sourceColumn: Month Year S
 
 		annotation SummarizationSetBy = Automatic
-
-	column 'End of Month'
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: d08304c3-4f02-4919-86d9-e1d09bf2234e
-		summarizeBy: none
-		sourceColumn: End of Month
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column 'Week Day'
 		dataType: string
@@ -129,66 +81,6 @@ table Calendar
 
 		annotation SummarizationSetBy = Automatic
 
-	column Week
-		dataType: string
-		lineageTag: 79f263c3-e35c-439c-8d74-9c49f834ebc1
-		summarizeBy: none
-		sourceColumn: Week
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Week of Year'
-		dataType: int64
-		formatString: 0
-		lineageTag: 81393607-01d8-4f8b-9334-c0d9f1de0043
-		summarizeBy: none
-		sourceColumn: Week of Year
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Week of Year W'
-		dataType: string
-		lineageTag: e7b3e0a0-ed74-4468-a737-4cbffab92be0
-		summarizeBy: none
-		sourceColumn: Week of Year W
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Fiscal Month'
-		dataType: int64
-		formatString: 0
-		lineageTag: 7bb61a44-b095-454f-9e4d-fcd89be6214f
-		summarizeBy: none
-		sourceColumn: Fiscal Month
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Fiscal Year'
-		dataType: int64
-		formatString: 0
-		lineageTag: 16288379-6933-44f2-a725-d741bef83b9d
-		summarizeBy: none
-		sourceColumn: Fiscal Year
-
-		annotation SummarizationSetBy = Automatic
-
-	column 'Fiscal Quarter'
-		dataType: int64
-		formatString: 0
-		lineageTag: 7ca6df0d-0e26-46bd-94fe-3fc01847acea
-		summarizeBy: none
-		sourceColumn: Fiscal Quarter
-
-		annotation SummarizationSetBy = Automatic
-
-	column IsWeekend
-		dataType: string
-		lineageTag: 381f3cc5-48f2-480d-8405-fd29f9ef977d
-		summarizeBy: none
-		sourceColumn: IsWeekend
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Month Name Full'
 		dataType: string
 		lineageTag: d408a98b-a478-4b5b-8cd7-00196ed73821
@@ -199,8 +91,6 @@ table Calendar
 		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
 	hierarchy 'Date Hierarchy'
 		lineageTag: eab285b0-ca67-4c85-83c4-21b852a55b6a
@@ -244,15 +134,14 @@ table Calendar
 				    #"Added Fiscal Month" = Table.AddColumn(#"Inserted Week of Year W", "Fiscal Month", each if Date.Month([Date]) <= 3 then Date.Month([Date]) + 9 else Date.Month([Date]) - 3),
 				    #"Added Fiscal Year" = Table.AddColumn(#"Added Fiscal Month", "Fiscal Year", each if Date.Month([Date]) <= 3 then Date.Year([Date]) else Date.Year([Date]) + 1),
 				    #"Added Fiscal Quarter" = Table.AddColumn(#"Added Fiscal Year", "Fiscal Quarter", each Number.RoundUp([Fiscal Month]/3)),
-				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Fiscal Quarter",{{"Fiscal Quarter", Int64.Type}, {"Fiscal Year", Int64.Type}, {"Fiscal Month", Int64.Type}, {"End of Month", type date}, {"Month Year S", Int64.Type}}),
-				    #"Added IsWeekend" = Table.AddColumn(#"Changed Type1", "IsWeekend", each if [Day of Week] >= 5 then 1 else 0)
+				    #"Added IsWeekend" = Table.AddColumn(#"Added Fiscal Quarter", "IsWeekend", each if [Day of Week] >= 5 then 1 else 0),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added IsWeekend",{{"Fiscal Quarter", Int64.Type}, {"Fiscal Year", Int64.Type}, {"Fiscal Month", Int64.Type}, {"End of Month", type date}, {"Month Year S", Int64.Type}, {"Month Name Full", type text}, {"IsWeekend", Int64.Type}}),
+				    #"Columns removed by Measure Killer"= Table.SelectColumns(#"Changed Type1",{"Day of Week","Date","Month Name Full","Year","Week of Month","Month Name","Month Year S","Day","Week Day"})
 				in
-				    #"Added IsWeekend"
+				    #"Columns removed by Measure Killer"
 				```
 
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
-
-	annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
