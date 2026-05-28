@@ -15,32 +15,6 @@ table Measure
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 06512712-2f3a-4923-afe0-9bcb101a5e65
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
-
-	measure 'Sales Coffee Beans' =
-			
-			CALCULATE(
-			    [Total Sales],
-			    DIM_Product[Product Category] = "Coffee beans"
-			)
-		displayFolder: Sales
-		lineageTag: 28cc6f6d-337c-4ee8-80ae-dc1cc23868d1
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'Average Month Sales' = ```
-			
-			AVERAGEX(
-			    ALLSELECTED('Calendar'[Month Name], 'Calendar'[Month Year S]),
-			    [Total Sales]
-			)
-			
-			```
-		displayFolder: Sales
-		lineageTag: c8af4e58-251a-4f9d-bdc4-6c4208c8b8d4
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Color for Month Sales' = ```
 			
 			VAR AverageMonthSales = 
@@ -132,12 +106,6 @@ table Measure
 		displayFolder: Sales
 		lineageTag: d5276f03-a097-4503-b8c1-f98d8c696ec8
 
-	measure 'Average Transaction' = AVERAGE(FACT_Transaction[Transaction Qty])
-		displayFolder: Quantity
-		lineageTag: 0ae943bd-cdfe-40a6-be94-c1b022ea5e82
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure 'Total Sales Previous Month' =
 			
 			VAR TopProducts =
@@ -175,62 +143,6 @@ table Measure
 	measure 'Title Calendar' = "When Do Customers make the Most Purchases?"
 		lineageTag: 40c69e25-fddf-4fec-9b92-60eb3e1a1804
 
-	measure 'Total Transaction Label' = "Total Transactions"
-		lineageTag: c13b069c-bca5-497c-a793-05c3bee7f5bf
-
-	measure MyUser = USERPRINCIPALNAME()
-		lineageTag: 851676b3-944e-4ad4-ab72-7400d29cf31a
-
-	measure Test =
-			
-			
-			VAR MaxSales =
-			    // MAXX(
-			    //     ALLSELECTED('Calendar'[Day]),
-			    //     [Total Sales]
-			    // )
-			    MAXX(
-			        ALLSELECTED('Calendar'[Week of Month], 'Calendar'[Week Day], 'Calendar'[Day of Week]),
-			        [Total Sales]
-			    )
-			
-			VAR Threshold = MaxSales*0.6
-			
-			VAR SetColor =
-			    IF(
-			        [Total Sales] > Threshold, "#FFFFFF",
-			        "#000000"
-			    )
-			
-			RETURN SetColor
-		lineageTag: 19b652b1-760c-4cad-94e3-8f464d460b10
-
-	measure 'Test 2' =
-			
-			
-			VAR MaxSales =
-			    // MAXX(
-			    //     ALLSELECTED('Calendar'[Day]),
-			    //     [Total Sales]
-			    // )
-			    MAXX(
-			        ALLSELECTED('Calendar'[Week of Month], 'Calendar'[Week Day], 'Calendar'[Day of Week]),
-			        [Total Sales]
-			    )
-			
-			VAR Threshold = MaxSales*0.7
-			
-			VAR SetColor =
-			    IF(
-			        [Total Sales] > Threshold, "#FFFFFF",
-			        "#000000"
-			    )
-			
-			RETURN Threshold
-		lineageTag: 402eabb2-c404-406c-83eb-c4f8591f1048
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	partition Measure = m
 		mode: import
 		source =
@@ -244,6 +156,4 @@ table Measure
 	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
-
-	annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
 

@@ -62,8 +62,6 @@ table FACT_Transaction
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
-
 	column Sales
 		dataType: double
 		lineageTag: 04d6253b-c167-4974-952a-0e9cb63632de
@@ -97,6 +95,4 @@ table FACT_Transaction
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Table
-
-	annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"DIM_Product","TableItemName":"Product (clusters)","ObjectType":4},"LinkType":"UsedInGroup"}]
 
